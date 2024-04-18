@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/invitacion-boda/static/css/main.e5a0f4d3.css",
+    "main.js": "/invitacion-boda/static/js/main.8c86ced4.js",
+    "static/js/453.f8904f77.chunk.js": "/invitacion-boda/static/js/453.f8904f77.chunk.js",
+    "index.html": "/invitacion-boda/index.html",
+    "main.e5a0f4d3.css.map": "/invitacion-boda/static/css/main.e5a0f4d3.css.map",
+    "main.8c86ced4.js.map": "/invitacion-boda/static/js/main.8c86ced4.js.map",
+    "453.f8904f77.chunk.js.map": "/invitacion-boda/static/js/453.f8904f77.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e5a0f4d3.css",
+    "static/js/main.8c86ced4.js"
+  ]
+}
