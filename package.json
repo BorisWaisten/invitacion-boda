@@ -2,7 +2,7 @@
   "name": "app-wedding",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://boriswaisten.github.io/wedding-invitation/app-wedding/",
+  "homepage": "https://boriswaisten.github.io/invitacion-boda",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
