@@ -3,7 +3,7 @@ import Image from 'next/image';
 import w1 from '@/public/w1.jpeg';
 import w3 from '@/public/w3.jpeg';
 import w4 from '@/public/w4.jpeg';
-import w5 from '@/public/w5.jpeg';
+import w5 from '@/public/W5.jpeg';
 
 const Gallery = () => {
   const images = [w1, w5, w3, w4];
