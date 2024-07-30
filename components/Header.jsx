@@ -1,5 +1,5 @@
 import React from 'react';
-import '../app/globals.css';
+import './components.css';
 import { dancingScript, playfairDisplay } from '../app/fonts'; // Ajusta la ruta según tu estructura de proyecto
 
 const Header = () => {

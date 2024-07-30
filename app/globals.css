@@ -11,12 +11,3 @@
         --color-text:209 213 219;
     }
 }
-
-.backgroundHeader {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 100vh;
-    width: 100%;
-}

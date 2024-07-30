@@ -6,10 +6,10 @@ import SideNav from '@/components/SideNav';
 import Link from 'next/link';
 import Countdown from '@/components/Countdown';
 import ScheduleEvent from '@/components/ScheduleEvent';
-import '/components/components.css';
+import '../components/components.css';
 const Home = () => {
   return (
-    <div className="min-h-screen bg-secondary flex flex-col items-center justify-center backgroundPage" style={{backgroundImage: "url('/videoFondo.mp4')"}}>
+    <div className="min-h-screen bg-secondary flex flex-col items-center justify-center">
       <SideNav />
       <main className="w-full max-w-7xl px-1 py-1 bg-terciary rounded-lg mt-8 mb-8">
         <Header />
