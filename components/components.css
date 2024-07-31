@@ -8,16 +8,17 @@
   .backgroundHeader {
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top ;
     background-attachment: fixed;
     min-height: 100vh;
-    width: 100%;
+    position: relative;
+    
   }
   
   /* Estilo adicional para mejor responsividad */
   @media (max-width: 768px) {
     .backgroundHeader {
-      background-attachment: scroll; /* Permite el desplazamiento en pantallas pequeñas */
+      background-attachment: fixed; /* Permite el desplazamiento en pantallas pequeñas */
     }
   }
   

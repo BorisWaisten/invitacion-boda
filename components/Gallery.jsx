@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import w1 from '@/public/w1.jpeg';
-import w3 from '@/public/w3.jpeg';
-import w4 from '@/public/w4.jpeg';
-import w5 from '@/public/W5.jpeg';
+import w1 from '@/app/public/w1.jpeg';
+import w3 from '@/app/public/w3.jpeg';
+import w4 from '@/app/public/w4.jpeg';
+import w5 from '@/app/public/W5.jpeg';
 
 const Gallery = () => {
   const images = [w1, w5, w3, w4];
@@ -15,11 +15,11 @@ const Gallery = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {images.map((src, index) => (
             <div key={index} className="relative w-full h-64 overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105">
-              <Image
+                <Image
                 src={src}
                 alt={`Wedding ${index + 1}`}
-                layout="fill"
-                objectFit="cover"
+                fill 
+                style={{ objectFit: 'cover' }}
                 className="rounded-lg"
               />
             </div>

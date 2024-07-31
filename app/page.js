@@ -7,6 +7,14 @@ import Link from 'next/link';
 import Countdown from '@/components/Countdown';
 import ScheduleEvent from '@/components/ScheduleEvent';
 import '../components/components.css';
+
+export const metadata = {
+  title:'M&G - 21/21/2025',
+  icons: {
+    icon: '/logo.png',
+  }
+}
+
 const Home = () => {
   return (
     <div className="min-h-screen bg-secondary flex flex-col items-center justify-center">
