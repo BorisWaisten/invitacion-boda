@@ -1,5 +1,5 @@
 import React from 'react';
-import { dancingScript, playfairDisplay } from '../app/fonts'; // Ajusta la ruta según tu estructura de proyecto
+import { dancingScript, playfairDisplay } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
 import './components.css';
 import ScheduleEvent from './ScheduleEvent';
 

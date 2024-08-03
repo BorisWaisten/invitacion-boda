@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import { montserrat } from "@/app/fonts";
+import { montserrat } from "../public/fonts";
 
 export default function SideNav() {
   return (

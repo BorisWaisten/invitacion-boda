@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { dancingScript, playfairDisplay } from '../fonts'; // Ajusta la ruta según tu estructura de proyecto
+import { dancingScript, playfairDisplay } from '../../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
 import { useRouter } from 'next/navigation';
 
 const SongSuggestionPage = () => {

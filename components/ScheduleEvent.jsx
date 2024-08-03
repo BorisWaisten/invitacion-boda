@@ -1,5 +1,5 @@
 import React from 'react';
-import {  playfairDisplay } from '../app/fonts'; // Ajusta la ruta según tu estructura de proyecto
+import {  playfairDisplay } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
 
 export default function ScheduleEvent() {
   const event = {

@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { dancingScript, playfairDisplay, montserrat } from '../app/fonts'; // Ajusta la ruta según tu estructura de proyecto
+import { dancingScript, playfairDisplay, montserrat } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
 
 export default function Countdown() {
   const calculateTimeLeft = () => {
