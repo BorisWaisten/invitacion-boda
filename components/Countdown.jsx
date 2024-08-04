@@ -1,10 +1,10 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { dancingScript, playfairDisplay, montserrat } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
+import { montserrat } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
 
 export default function Countdown() {
   const calculateTimeLeft = () => {
-    const weddingDate = new Date('2025-12-21T17:00:00'); // Ajusta la fecha y hora de la boda
+    const weddingDate = new Date('2025-03-22T00:00:00'); // Ajusta la fecha y hora de la boda
     const now = new Date();
     const difference = weddingDate - now;
 
@@ -45,17 +45,17 @@ export default function Countdown() {
     }
 
     timerComponents.push(
-      <div key={interval} className="m-2 p-4 bg-white bg-opacity-80 rounded shadow-lg">
-        <span className={`block text-4xl ${playfairDisplay.className} text-gray-800`}>{timeLeft[interval]}</span>
-        <span className={`block text-xl ${montserrat.className} text-gray-600`}>{interval}</span>
+      <div key={interval} className= "m-2 p-4 bg-gray-800  rounded-[2rem] shadow-lg">
+        <span className={`block text-4xl ${montserrat.className} text-white`}>{timeLeft[interval]}</span>
+        <span className={`block text-xl ${montserrat.className} text-white `}>{interval}</span>
       </div>
     );
   });
 
   return (
-    <section className="bg-terciary py-12">
+    <section className="bg-secondary py-8">
       <div className="container mx-auto text-center">
-        <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${playfairDisplay.className} text-gray-800`}>Falta</h2>
+        <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${montserrat.className} text-gray-800`}>Falta</h2>
         <div className="flex flex-wrap justify-center items-center space-x-4">
           {timerComponents.length ? timerComponents : <span className={`text-2xl ${montserrat.className} text-gray-700`}>¡Es el día de la boda!</span>}
         </div>

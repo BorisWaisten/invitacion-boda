@@ -23,7 +23,7 @@ export const SacramentoFont = Sacramento({
 
 export const montserrat = Montserrat({
     subsets: ["latin"],
-    weight: ["400", "700"],
+    weight: ["400"],
     display: "swap",
     fallback: ["sans-serif"],
 });

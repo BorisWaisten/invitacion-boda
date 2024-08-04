@@ -1,44 +1,53 @@
 import React from 'react';
-import { dancingScript, playfairDisplay } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
+import { montserrat } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
 import './components.css';
 import ScheduleEvent from './ScheduleEvent';
+import Button from '../ui/buttons'; // Importa el nuevo componente de botón
 
 const Invitation = () => {
   return (
-    <section className="bg-terciary mt-5 py-8">
+    <section className="mt-5 py-8">
       <div className="container text-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className='wedding-border relative'>
-            <h2 className={`text-3xl md:text-4xl font-bold text-gray-800 mb-8 ${playfairDisplay.className}`}>Ceremonia</h2>
-            <p className={`text-2xl font-bold text-gray-600 mb-4 ${dancingScript.className}`}>Día</p>
-            <p className={`text-xl text-gray-600 mb-4 ${playfairDisplay.className}`}>Fecha: [Fecha de la Boda]</p>
+        <div className="grid grid-cols-1  md:grid-cols-2 gap-8">
+          <div className='wedding-border bg-secondary relative'>
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-800 mb-8 ${montserrat.className}`}>Ceremonia</h2>
+            <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
+              Día</p>
+            <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
+              Fecha: </p>
             <ScheduleEvent />
-            <p className={`text-2xl font-bold text-gray-600 mb-4 mt-8 ${dancingScript.className}`}>Lugar</p>
-            <p className={`text-xl text-gray-600 mb-4 ${playfairDisplay.className}`}>Lugar: [Nombre del Lugar]</p>
-            <button className={`py-2 px-4 w-1/3 mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-lg ${playfairDisplay.className}`}>
-              <a href="/asistency" target="_blank" rel="noopener noreferrer">Confirmar Asistencia</a>
-            </button>
-            <p className={`text-2xl font-bold text-gray-600 mb-4 mt-8 ${dancingScript.className}`}>Dirección</p>
-            <p className={`text-xl text-gray-600 mb-4 ${playfairDisplay.className}`}>Dirección: [Dirección del Lugar]</p>
-            <button className={`py-2 px-4 w-1/3 mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-lg ${playfairDisplay.className}`}>
-              <a href="[Link de Google Maps]" target="_blank" rel="noopener noreferrer">Cómo Llegar?</a>
-            </button>
+            <p className={`text-3xl font-bold text-gray-600 mb-4 mt-8 `} style={{ fontFamily: 'Asmelina Harley' }}>Lugar</p>
+            <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
+              Lugar: </p>
+            <Button href="/asistency" className={montserrat.className}>
+              Confirmar Asistencia
+            </Button>
+            <p className={`text-3xl font-bold text-gray-600 mb-4 mt-8 `} style={{ fontFamily: 'Asmelina Harley' }}>Dirección</p>
+            <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
+              Dirección: </p>
+            <Button href="[Link de Google Maps]" className={montserrat.className}>
+              Cómo Llegar?
+            </Button>
           </div>
-          <div className='wedding-border relative'>
-            <h2 className={`text-3xl md:text-4xl font-bold text-gray-800 mb-8 ${playfairDisplay.className}`}>Fiesta</h2>
-            <p className={`text-2xl font-bold text-gray-600 mb-4 ${dancingScript.className}`}>Día</p>
-            <p className={`text-xl text-gray-600 mb-4 ${playfairDisplay.className}`}>Fecha: [Fecha de la Boda]</p>
+          <div className='wedding-border bg-secondary relative'>
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-800 mb-8 ${montserrat.className}`}>Fiesta</h2>
+            <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
+              Día</p>
+            <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
+              Fecha:</p>
             <ScheduleEvent />
-            <p className={`text-2xl font-bold text-gray-600 mb-4 mt-8 ${dancingScript.className}`}>Lugar</p>
-            <p className={`text-xl text-gray-600 mb-4 ${playfairDisplay.className}`}>Lugar: [Nombre del Lugar]</p>
-            <button className={`py-2 px-4 w-1/3 mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-lg ${playfairDisplay.className}`}>
-              <a href="/asistency" target="_blank" rel="noopener noreferrer">Confirmar Asistencia</a>
-            </button>
-            <p className={`text-2xl font-bold text-gray-600 mb-4 mt-8 ${dancingScript.className}`}>Dirección</p>
-            <p className={`text-xl text-gray-600 mb-4 ${playfairDisplay.className}`}>Dirección: [Dirección del Lugar]</p>
-            <button className={`py-2 px-4 w-1/3 mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-lg ${playfairDisplay.className}`}>
-              <a href="[Link de Google Maps]" target="_blank" rel="noopener noreferrer">Cómo Llegar?</a>
-            </button>
+            <p className={`text-3xl font-bold text-gray-600 mb-4 mt-8 `} style={{ fontFamily: 'Asmelina Harley' }}>Lugar</p>
+            <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
+              Lugar:</p>
+            <Button href="/asistency" className={montserrat.className}>
+              Confirmar Asistencia
+            </Button>
+            <p className={`text-3xl font-bold text-gray-600 mb-4 mt-8 `} style={{ fontFamily: 'Asmelina Harley' }}>Dirección</p>
+            <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
+              Dirección: </p>
+            <Button href="[Link de Google Maps]" className={montserrat.className}>
+              Cómo Llegar?
+            </Button>
           </div>
         </div>
       </div>

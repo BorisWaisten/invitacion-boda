@@ -1,5 +1,6 @@
 import React from 'react';
-import {  playfairDisplay } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
+import { playfairDisplay } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
+import Button from '../ui/buttons'; // Importa el nuevo componente de botón
 
 export default function ScheduleEvent() {
   const event = {
@@ -31,12 +32,10 @@ export default function ScheduleEvent() {
   const googleCalendarLink = createGoogleCalendarLink(event);
 
   return (
-    <div >
-      <a href={googleCalendarLink} target="_blank" rel="noopener noreferrer">
-        <button className={`py-2 px-4 w-1/3 mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-lg ${playfairDisplay.className}`}>
-           Agendar Evento
-        </button>
-      </a>
+    <div>
+      <Button href={googleCalendarLink} className={playfairDisplay.className}>
+        Agendar Evento
+      </Button>
     </div>
   );
 }
