@@ -14,7 +14,7 @@ main {
 
 .titleHeader {
   font-size: 6rem;
-  line-height: 6rem;
+  line-height: 7.5rem;
 }
 
 
@@ -42,17 +42,23 @@ main {
     }
     .titleHeader {
       font-size: 4.5rem;
-      line-height: 4rem;
+      line-height: 5.5rem;
     }
   }
 
   @media (max-width: 576px) {
     .titleHeader {
-      font-size: 2rem;
-      line-height: 2rem;
+      font-size: 2.5rem;
+      line-height: 3.5rem;
     }
   }
   
+  @media (max-width: 320px) {
+    .titleHeader {
+      font-size: 2.0rem;
+      line-height: 3rem;
+    }
+  }
 
   .card {
     margin: 1rem;
