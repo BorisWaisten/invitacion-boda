@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { montserrat } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
 
 export default function Countdown() {
   const calculateTimeLeft = () => {
@@ -46,8 +45,8 @@ export default function Countdown() {
 
     timerComponents.push(
       <div key={interval} className= "m-2 p-4 bg-gray-800  rounded-[2rem] shadow-lg">
-        <span className={`block text-4xl ${montserrat.className} text-white`}>{timeLeft[interval]}</span>
-        <span className={`block text-xl ${montserrat.className} text-white `}>{interval}</span>
+        <span className={`block text-4xl  text-white`}>{timeLeft[interval]}</span>
+        <span className={`block text-xl  text-white `}>{interval}</span>
       </div>
     );
   });
@@ -55,9 +54,9 @@ export default function Countdown() {
   return (
     <section className="bg-secondary py-8">
       <div className="container mx-auto text-center">
-        <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${montserrat.className} text-gray-800`}>Falta</h2>
+        <h2 className={`text-3xl md:text-4xl font-bold mb-8  text-gray-800`}>Falta</h2>
         <div className="flex flex-wrap justify-center items-center space-x-4">
-          {timerComponents.length ? timerComponents : <span className={`text-2xl ${montserrat.className} text-gray-700`}>¡Es el día de la boda!</span>}
+          {timerComponents.length ? timerComponents : <span className={`text-2xl  text-gray-700`}>¡Es el día de la boda!</span>}
         </div>
       </div>
     </section>

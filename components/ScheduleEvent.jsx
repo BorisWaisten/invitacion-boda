@@ -1,6 +1,4 @@
 import React from 'react';
-import { playfairDisplay } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
-import Button from '../ui/buttons'; // Importa el nuevo componente de botón
 
 export default function ScheduleEvent() {
   const event = {
@@ -33,9 +31,9 @@ export default function ScheduleEvent() {
 
   return (
     <div>
-      <Button href={googleCalendarLink} className={playfairDisplay.className}>
-        Agendar Evento
-      </Button>
+      <button className='py-2 px-4 rounded-ss-2xl rounded-ee-2xl bg-primary text-text font-semibold shadow-md' onClick={() => window.open(googleCalendarLink, '_blank')}>
+        Agendar
+      </button>
     </div>
   );
 }

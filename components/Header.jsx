@@ -1,6 +1,5 @@
 import React from 'react';
 import './components.css';
-import { dancingScript, greatVibes, montserrat, parisienne, SacramentoFont } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
 
 const Header = () => {
   return (
@@ -10,15 +9,15 @@ const Header = () => {
           style={{ backgroundImage: `url('/w6.jpg')` }}
           className="backgroundHeader m-1 rounded-lg"
         ></div>
-        <div className="container text-center relative bg-secondary mt-10 mb-10 border-header px-4">
-          <p className={`text-xl sm:text-2xl ${montserrat.className} mb-6`}>22.03.25</p>
+        <div className="container text-center relative mt-10 mb-10  px-4">
+          <p className={`text-xl sm:text-2xl  mb-6`}>22.03.25</p>
           <h1
-            className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-2"
+            className="titleHeader font-extrabold mt-10"
             style={{ fontFamily: 'Asmelina Harley' }}
           >
             Martu y Gino
           </h1>
-          <div className={`text-lg sm:text-sm md:text-2xl  mt-4 ${montserrat.className}`}>
+          <div className={`text-lg sm:text-sm md:text-2xl  mt-10 `}>
             <p>
               Ante Dios y nuestros seres queridos, nos uniremos en matrimonio.
               Acompáñanos en esta bendita celebración.

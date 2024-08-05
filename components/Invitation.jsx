@@ -1,16 +1,16 @@
+'use client';
+
 import React from 'react';
-import { montserrat } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
 import './components.css';
 import ScheduleEvent from './ScheduleEvent';
-import Button from '../ui/buttons'; // Importa el nuevo componente de botón
 
 const Invitation = () => {
   return (
     <section className="mt-5 py-8">
       <div className="container text-center">
-        <div className="grid grid-cols-1  md:grid-cols-2 gap-8">
-          <div className='wedding-border bg-secondary relative'>
-            <h2 className={`text-3xl md:text-4xl font-bold text-gray-800 mb-8 ${montserrat.className}`}>Ceremonia</h2>
+        <div className="grid grid-cols-1 sm:m-4 m-2 md:grid-cols-2 gap-8">
+          <div className='card  relative'>
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-800 mb-8 `}>Ceremonia</h2>
             <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
               Día</p>
             <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
@@ -19,18 +19,18 @@ const Invitation = () => {
             <p className={`text-3xl font-bold text-gray-600 mb-4 mt-8 `} style={{ fontFamily: 'Asmelina Harley' }}>Lugar</p>
             <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
               Lugar: </p>
-            <Button href="/asistency" className={montserrat.className}>
+            <button className='py-2 px-4 rounded-ss-2xl rounded-ee-2xl bg-primary text-text font-semibold shadow-md' onClick={() => window.open( "/asistency" )} >
               Confirmar Asistencia
-            </Button>
+            </button>
             <p className={`text-3xl font-bold text-gray-600 mb-4 mt-8 `} style={{ fontFamily: 'Asmelina Harley' }}>Dirección</p>
             <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
               Dirección: </p>
-            <Button href="[Link de Google Maps]" className={montserrat.className}>
+            <button className='py-2 px-4 rounded-ss-2xl rounded-ee-2xl bg-primary text-text font-semibold shadow-md' onClick={() => window.alert( "enlace a google maps" )} >
               Cómo Llegar?
-            </Button>
+            </button>
           </div>
-          <div className='wedding-border bg-secondary relative'>
-            <h2 className={`text-3xl md:text-4xl font-bold text-gray-800 mb-8 ${montserrat.className}`}>Fiesta</h2>
+          <div className=' card relative'>
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-800 mb-8 `}>Fiesta</h2>
             <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
               Día</p>
             <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
@@ -39,15 +39,15 @@ const Invitation = () => {
             <p className={`text-3xl font-bold text-gray-600 mb-4 mt-8 `} style={{ fontFamily: 'Asmelina Harley' }}>Lugar</p>
             <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
               Lugar:</p>
-            <Button href="/asistency" className={montserrat.className}>
+            <button className='py-2 px-4 rounded-ss-2xl rounded-ee-2xl bg-primary text-text font-semibold shadow-md' onClick={() => window.open( "/asistency" )} >
               Confirmar Asistencia
-            </Button>
+            </button>
             <p className={`text-3xl font-bold text-gray-600 mb-4 mt-8 `} style={{ fontFamily: 'Asmelina Harley' }}>Dirección</p>
             <p className={`text-3xl font-bold text-gray-600 mb-4 `} style={{ fontFamily: 'Asmelina Harley' }} >
               Dirección: </p>
-            <Button href="[Link de Google Maps]" className={montserrat.className}>
+            <button className='py-2 px-4 rounded-ss-2xl rounded-ee-2xl bg-primary text-text font-semibold shadow-md' onClick={() => window.alert( "enlace a google maps" )} >
               Cómo Llegar?
-            </Button>
+            </button>
           </div>
         </div>
       </div>

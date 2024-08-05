@@ -12,16 +12,12 @@ main {
   padding: 1rem; /* Agregar padding para espaciar internamente */
 }
 
-/* Ajuste para el header */
-.border-header {
-  border: 3px solid #e5e5e5; /* Borde suave */
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box; /* Asegurar que el padding y el borde se consideren dentro del ancho total */
+.titleHeader {
+  font-size: 6rem;
+  line-height: 6rem;
 }
+
+
 
 .custom-shadow {
     position: relative;
@@ -44,49 +40,29 @@ main {
     .backgroundHeader {
       background-attachment: fixed; /* Permite el desplazamiento en pantallas pequeñas */
     }
+    .titleHeader {
+      font-size: 4.5rem;
+      line-height: 4rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .titleHeader {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
   }
   
 
-  .wedding-border {
-    border: 3px solid #e5e5e5 ; /* Borde suave */
-    border-radius: 15px ;
-    padding: 20px ;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px ;
-    position: relative;
-    overflow: hidden;
+  .card {
+    margin: 1rem;
   }
   
-  /* .wedding-border::before,
-  .wedding-border::after {
-    content: '';
-    position: absolute ;
-    width: 30px ; 
-    height: 30px ;
-    border-radius: 70%  ;
-    background-color: #f1f1eb ;
-    z-index: 100 ;
-  }
-  
-  .wedding-border::before {
-    top: -10px ;
-    left: -10px ;
-  }
-  
-  .wedding-border::after {
-    bottom: -10px ;
-    right: -10px ;
-  }
-  
-  .wedding-border::after,
-  .wedding-border::before {
-     background-image: radial-gradient(circle at center, #fdd9e7, transparent) ; 
-    z-index: 99 ;
-  } */
   
   
   @media (max-width: 768px) {
-    .wedding-border {
-      margin-bottom: 20px ; /* Espaciado en pantallas pequeñas */
+    .card {
+      margin-bottom: 1.5rem; /* Espaciado en pantallas pequeñas */
     }
   }
   
