@@ -17,7 +17,7 @@ const Header = () => {
           >
             Martu y Gino
           </h1>
-          <div className={`text-base sm:text-lg md:text-2xl lg:text-2xl mt-10 `}>
+          <div className={`text-xs sm:text-lg md:text-2xl lg:text-2xl mt-10 `}>
             <p>
               Ante Dios y nuestros seres queridos, nos uniremos en matrimonio.
               Acompáñanos en esta bendita celebración.

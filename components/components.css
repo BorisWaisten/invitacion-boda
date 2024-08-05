@@ -35,6 +35,15 @@ main {
     
   }
   
+  .card {
+    margin: 1rem;
+  }
+  
+  .text-party{
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+  }
+  
   /* Estilo adicional para mejor responsividad */
   @media (max-width: 768px) {
     .backgroundHeader {
@@ -44,6 +53,9 @@ main {
       font-size: 4.5rem;
       line-height: 5.5rem;
     }
+    .card {
+      margin-bottom: 1.5rem; /* Espaciado en pantallas pequeñas */
+    }
   }
 
   @media (max-width: 576px) {
@@ -51,24 +63,33 @@ main {
       font-size: 2.5rem;
       line-height: 3.5rem;
     }
-  }
-  
-  @media (max-width: 320px) {
-    .titleHeader {
-      font-size: 2.0rem;
-      line-height: 3rem;
+
+    .text-party {
+      font-size: 1.75rem;
+      line-height: 1.5rem;
     }
   }
 
-  .card {
-    margin: 1rem;
-  }
-  
-  
-  
-  @media (max-width: 768px) {
-    .card {
-      margin-bottom: 1.5rem; /* Espaciado en pantallas pequeñas */
+  @media (max-width: 425px) {
+    .titleHeader {
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+    }
+    .text-party {
+      font-size: 1.75rem;
+      line-height: 1.5rem;
     }
   }
+
   
+  @media (max-width: 375px ) and (min-width: 320px) {
+    .titleHeader {
+      font-size: 2.15rem;
+      line-height: 3rem;
+    }
+    .text-party {
+      font-size: 1.32rem;
+      line-height: 1.5rem;
+    }
+  }
+
