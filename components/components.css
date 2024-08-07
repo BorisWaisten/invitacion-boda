@@ -59,6 +59,9 @@ main {
   }
 
   @media (max-width: 576px) {
+    .backgroundHeader {
+      background-attachment: fixed; /* Permite el desplazamiento en pantallas pequeñas */
+    }
     .titleHeader {
       font-size: 2.5rem;
       line-height: 3.5rem;
@@ -71,6 +74,9 @@ main {
   }
 
   @media (max-width: 425px) {
+    .backgroundHeader {
+      background-attachment: fixed; /* Permite el desplazamiento en pantallas pequeñas */
+    }
     .titleHeader {
       font-size: 2.5rem;
       line-height: 3.5rem;
@@ -83,6 +89,9 @@ main {
 
   
   @media (max-width: 375px ) and (min-width: 320px) {
+    .backgroundHeader {
+      background-attachment: fixed; /* Permite el desplazamiento en pantallas pequeñas */
+    }
     .titleHeader {
       font-size: 2.15rem;
       line-height: 3rem;
