@@ -14,12 +14,11 @@ const Gallery = () => {
         <h2 className= {`text-3xl md:text-4xl font-bold text-gray-800 mb-8 `} >Estas son nuestras fotos</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {images.map((src, index) => (
-            <div key={index} className="relative w-full h-64 overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105">
+            <div key={index} className="relative w-[50vh] h-[70vh] overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105">
                 <Image
                 src={src}
                 alt={`Wedding ${index + 1}`}
-                fill 
-                style={{ objectFit: 'cover' }}
+                style={{objectFit: 'cover', width: '100%', height: '100%'}} 
                 className="rounded-lg"
               />
             </div>

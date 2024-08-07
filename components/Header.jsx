@@ -1,14 +1,12 @@
 import React from 'react';
 import './components.css';
+import Image from 'next/image';
 
 const Header = () => {
   return (
     <header className="flex justify-center items-center min-h-screen relative">
       <div className="w-full h-full relative">
-        <div
-          style={{ backgroundImage: `url('/martu1.jpg')` }}
-          className="backgroundHeader m-1 rounded-lg"
-        ></div>
+        <Image src="/martu1.jpg" alt="header" width={1920} height={1080} sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'  quality={100} priority={true} style={{objectFit: 'cover'}}  />
         <div className="container text-center relative mt-10 mb-10  px-4">
           <p className={`text-base sm:text-lg md:text-2xl font-bold  mb-6`}>22.03.25</p>
           <h1
