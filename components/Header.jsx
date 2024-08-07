@@ -6,7 +6,7 @@ const Header = () => {
     <header className="flex justify-center items-center min-h-screen relative">
       <div className="w-full h-full relative">
         <div
-          style={{ backgroundImage: `url('/w6.jpg')` }}
+          style={{ backgroundImage: `url('/martu1.jpg')` }}
           className="backgroundHeader m-1 rounded-lg"
         ></div>
         <div className="container text-center relative mt-10 mb-10  px-4">

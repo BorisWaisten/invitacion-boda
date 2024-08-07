@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import w1 from '@/app/public/w1.jpeg';
-import w3 from '@/app/public/w3.jpeg';
-import w4 from '@/app/public/w4.jpeg';
-import w5 from '@/app/public/W5.jpeg';
+import w1 from '../app/public/martu2.jpg';
+import w3 from '../app/public/martu3.jpg';
+import w4 from '../app/public/martu4.jpg';
+import w5 from '../app/public/martu5.jpg';
 
 const Gallery = () => {
   const images = [w1, w5, w3, w4];

@@ -25,8 +25,9 @@ export const montserrat = Montserrat({
     subsets: ["latin"],
     weight: ["400"],
     display: "swap",
-    fallback: ["sans-serif"],
 });
+
+
 
 export const dancingScript = Dancing_Script({
     subsets: ["latin"],

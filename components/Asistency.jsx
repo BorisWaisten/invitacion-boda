@@ -7,9 +7,12 @@ const Asistency = () => {
     apellido: '',
     parejaNombre: '',
     parejaApellido: '',
-    // Añadir más campos según sea necesario
     celiaco: false,
     diabetes: false,
+    hipertension: false,
+    hipotension: false,
+    vegano: false,
+    vegetariano: false,
     otraInfo: '',
   });
 
@@ -21,18 +24,47 @@ const Asistency = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    window.location.href = '/';
-    // Aquí puedes enviar los datos del formulario al backend
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyxsn5x1UD6Z5PgHSsKWB3lhLpkmkuVtAWT3caZp51da17YLEV9jVGAmSPtY_hJKkoE/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('¡Información enviada con éxito!');
+        setFormData({
+          nombre: '',
+          apellido: '',
+          parejaNombre: '',
+          parejaApellido: '',
+          celiaco: false,
+          diabetes: false,
+          hipertension: false,
+          hipotension: false,
+          vegano: false,
+          vegetariano: false,
+          otraInfo: '',
+        });
+        window.location('/');
+      } else {
+        alert('Hubo un error al enviar la información.');
+      }
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+      alert('Error de red.');
+    }
   };
 
   return (
-    <section id="asistency" className="bg-gray-100 mt-10 rounded-lg py-8">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Confirmar Asistencia</h2>
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+    <section id="asistency" className="bg-terciary min-h-screen flex items-center justify-center">
+      <div className="container bg-white rounded-xl shadow-2xl p-8 m-10 mx-4 max-w-xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Confirmar Asistencia</h2>
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4">
           <div className="mb-4">
             <input
               type="text"
@@ -75,31 +107,81 @@ const Asistency = () => {
               className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-          <div className="mb-4">
-            <label className="block text-left">
-              <input
-                type="checkbox"
-                name="celiaco"
-                checked={formData.celiaco}
-                onChange={handleChange}
-                className="mr-2"
-              />
-              Celiaco
-            </label>
+          <div className='grid grid-cols-2 gap-4'>
+            <div className="mb-4">
+              <label className="block text-left">
+                <input
+                  type="checkbox"
+                  name="celiaco"
+                  checked={formData.celiaco}
+                  onChange={handleChange}
+                  className="mr-2"
+                />
+                Celiaco
+              </label>
+            </div>
+            <div className="mb-4">
+              <label className="block text-left">
+                <input
+                  type="checkbox"
+                  name="hipertension"
+                  checked={formData.hipertension}
+                  onChange={handleChange}
+                  className="mr-2"
+                />
+                Hipertensión
+              </label>
+            </div>
+            <div className="mb-4">
+              <label className="block text-left">
+                <input
+                  type="checkbox"
+                  name="diabetes"
+                  checked={formData.diabetes}
+                  onChange={handleChange}
+                  className="mr-2"
+                />
+                Diabetes
+              </label>
+            </div>
+            <div className="mb-4">
+              <label className="block text-left">
+                <input
+                  type="checkbox"
+                  name="hipotension"
+                  checked={formData.hipotension}
+                  onChange={handleChange}
+                  className="mr-2"
+                />
+                Hipotensión
+              </label>
+            </div>
+            <div className="mb-4">
+              <label className="block text-left">
+                <input
+                  type="checkbox"
+                  name="vegano"
+                  checked={formData.vegano}
+                  onChange={handleChange}
+                  className="mr-2"
+                />
+                Vegano
+              </label>
+            </div>
+            <div className="mb-4">
+              <label className="block text-left">
+                <input
+                  type="checkbox"
+                  name="vegetariano"
+                  checked={formData.vegetariano}
+                  onChange={handleChange}
+                  className="mr-2"
+                />
+                Vegetariano
+              </label>
+            </div>
           </div>
           <div className="mb-4">
-            <label className="block text-left">
-              <input
-                type="checkbox"
-                name="diabetes"
-                checked={formData.diabetes}
-                onChange={handleChange}
-                className="mr-2"
-              />
-              Diabetes
-            </label>
-          </div>
-          <div className="mb-4 md:col-span-2">
             <textarea
               name="otraInfo"
               placeholder="Otra información relevante"
@@ -109,16 +191,15 @@ const Asistency = () => {
               rows="4"
             />
           </div>
-          <div className="mb-4 md:col-span-2">
+          <div className="mb-4">
             <button
               type="submit"
               className="w-full px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-colors"
-              >
+            >
               Enviar
             </button>
           </div>
         </form>
-        
       </div>
     </section>
   );
