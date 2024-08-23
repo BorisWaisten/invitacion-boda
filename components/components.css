@@ -17,6 +17,13 @@ main {
   line-height: 7.5rem;
 }
 
+.underline {  
+  position: relative;  
+  display: inline-block;  
+  color: white  
+}  
+
+
 
 
 .custom-shadow {
@@ -43,8 +50,18 @@ main {
     font-size: 2.25rem;
     line-height: 2.25rem;
   }
+
+
   
   /* Estilo adicional para mejor responsividad */
+
+@media (max-width: 1024px) {
+  .titleHeadwer {
+    font-size: 5rem;
+    line-height: 6.5rem;
+  }
+}
+
   @media (max-width: 768px) {
     .backgroundHeader {
       background-attachment: fixed; /* Permite el desplazamiento en pantallas pequeñas */
@@ -93,8 +110,7 @@ main {
       background-attachment: fixed; /* Permite el desplazamiento en pantallas pequeñas */
     }
     .titleHeader {
-      font-size: 2.15rem;
-      line-height: 3rem;
+      font-size: 1.95rem;
     }
     .text-party {
       font-size: 1.32rem;

@@ -16,7 +16,7 @@ export const metadata = {
 const Home = () => {
   return (
     <div className="min-h-screen bg-terciary flex flex-col items-center justify-center">
-      <main className="w-full max-w-7xl  bg-terciary rounded-lg m-8">
+      <main className="w-full max-w-7xl  bg-terciary rounded-lg ">
         <Header />
         <section id="countdown" className="custom-shadow ">
           <Countdown />
