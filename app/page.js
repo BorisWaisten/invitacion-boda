@@ -5,6 +5,10 @@ import Footer from '@/components/Footer';
 import Countdown from '@/components/Countdown';
 import '../components/components.css';
 import Party from '@/components/Party';
+import Date from '@/components/Date';
+import Regalos from '@/components/Gifts';
+import Asistency from '@/components/Asistency';
+import ConfirmarAsistencia from '@/components/ConfirmAsistency';
 
 export const metadata = {
   title:'M&G - 21/21/2025',
@@ -15,11 +19,11 @@ export const metadata = {
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-terciary flex flex-col items-center justify-center">
-      <main className="w-full max-w-7xl  bg-terciary rounded-lg ">
+    <div className="min-h-screen  flex flex-col items-center justify-center">
+      <main className="w-full max-w-7xl rounded-lg ">
         <Header />
-        <section id="countdown" className="custom-shadow ">
-          <Countdown />
+        <section id="date" >
+          <Date />
         </section>
         <section id="invitation">
           <Invitation />
@@ -30,10 +34,12 @@ const Home = () => {
         <section id='party'> 
           <Party />
         </section>
-        <div className= {`h-[50vh] flex flex-col items-center justify-center `} >
-          <h1 className="text-2xl font-bold text-gray-800 mb-4" >¡Gracias por acompañarnos en este momento tan importante!</h1>
-          <p className="text-gray-600">Tu presencia hace que este día sea aún más especial.</p>
-        </div>
+        <section id="gifts">
+          <Regalos />
+        </section>
+        <section id="asistency">
+          <ConfirmarAsistencia />
+        </section>
       </main>
       <Footer />
     </div>

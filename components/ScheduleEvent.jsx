@@ -1,6 +1,15 @@
 import React from 'react';
+import { cilCalendar } from '@coreui/icons';
+import CIcon from '@coreui/icons-react';
+export default function ScheduleEvent() {
 
-export default function ScheduleEvent({ evento }) {
+  const evento ={
+    title: 'Boda M&G',
+    day: '22/03/2025',
+    description: '¡Ven a celebrar con nosotros!',
+    startDate: new Date('2025-03-22T12:00:00'), 
+    endDate: new Date('2025-03-22T13:00:00'), 
+  }
   const formatDate = (date) => {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -9,7 +18,7 @@ export default function ScheduleEvent({ evento }) {
     const minutes = String(date.getMinutes()).padStart(2, '0');
     const seconds = String(date.getSeconds()).padStart(2, '0');
 
-    return `${year}${month}${day}T${hours}${minutes}${seconds}`;
+    return `${year}${month}${day}${hours}${minutes}${seconds}`;
   };
 
   const createGoogleCalendarLink = (event) => {
@@ -20,19 +29,21 @@ export default function ScheduleEvent({ evento }) {
       event.title
     )}&dates=${startDate}/${endDate}&details=${encodeURIComponent(
       event.description
-    )}&location=${encodeURIComponent(event.location)}`;
+    )}`;
   };
 
   const googleCalendarLink = createGoogleCalendarLink(evento);
 
   return (
-    <div>
+    <div className="w-[50vw] flex justify-center">
       <button
-        className="py-2 px-4 rounded-ss-2xl rounded-ee-2xl bg-primary text-text font-semibold shadow-md"
+        className=" w-auto px-2 rounded-3xl bg-primary text-white font-semibold shadow-md flex items-center justify-center"
         onClick={() => window.open(googleCalendarLink, '_blank')}
       >
-        Agendar
+        <img className=' h-[5vh] sm:h-[10vh] md:h-[10vh] lg:h-[10vh] ' src="/agenda.svg" alt="" />
+        <span className='  text-[11px] sm:text-sm md:text-base lg:text-lg'>AGENDAR LA FECHA</span>
       </button>
-    </div>
+   </div>
+
   );
 }

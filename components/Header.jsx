@@ -1,6 +1,7 @@
 import React from 'react';
 import './components.css';
 import Image from 'next/image';
+import { cinzelDecorative } from '@/public/fonts';
 
 const Header = () => {
   return (
@@ -20,8 +21,7 @@ const Header = () => {
           <p className="text-lg md:text-2xl lg:text-2xl font-bold m-5 underline">22.03.2025</p>
           <div className="flex flex-col items-center">
             <h1
-              className="titleHeader font-extrabold text-center"
-              style={{ fontFamily: 'Asmelina Harley' }}
+              className={`titleHeader text-center ${cinzelDecorative.className}`}
             >
               Martu & Gino
             </h1>

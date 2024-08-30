@@ -20,7 +20,8 @@ module.exports = {
         terciary: 'rgb(var(--color-terciary) / <alpha-value>)',
       },
       textColor: {
-        primary:' rgb(var(--color-text) / <alpha-value>)',
+        primary:' rgb(var(--color-text-primary) / <alpha-value>)',
+        secondary: 'rgb(var(--color-text-secondary) / <alpha-value>)',
       },
     },
   },

@@ -11,18 +11,19 @@ export default function Countdown() {
 
     if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
+        DIAS: String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(3, '0'),
+        HS: String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, '0'),
+        MIN: String(Math.floor((difference / 1000 / 60) % 60)).padStart(2, '0'),
       };
     } else {
       // Si el tiempo ha llegado, muestra ceros en todas las unidades
       timeLeft = {
-        days: 0,
-        hours: 0,
-        minutes: 0,
+        DIAS: '000',
+        HS: '00',
+        MIN: '00',
       };
     }
+    
 
     return timeLeft;
   };
@@ -47,18 +48,17 @@ export default function Countdown() {
 
   Object.keys(timeLeft).forEach((interval) => {
     timerComponents.push(
-      <div key={interval} className="m-2 p-4 bg-gray-800 rounded-[1.5rem] sm:rounded-[2rem] shadow-lg">
+      <div key={interval} className="m-2  p-4 font-bold bg-gray-600 rounded-[1rem] sm:rounded-[1rem] shadow-lg">
         <span className={`block text-sm sm:text-3xl md:text-4xl text-white`}>{timeLeft[interval]}</span>
-        <span className={`block text-sm sm:text-3xl md:text-4xl text-white`}>{interval}</span>
+        <span className={`block text-xs sm:text-xl md:text-2xl text-white`}>{interval}</span>
       </div>
     );
   });
 
   return (
-    <section className="bg-secondary py-8">
+    <section >
       <div className="container mx-auto text-center">
-        <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-gray-800`}>Falta</h2>
-        <div className="flex flex-wrap justify-center items-center space-x-4">
+        <div className="flex flex-wrap justify-center items-center ">
           {timerComponents.length ? timerComponents : <span className={`text-2xl text-gray-700`}>¡Es el día de la boda!</span>}
         </div>
       </div>

@@ -1,22 +1,8 @@
-import {Parisienne, Sacramento,Great_Vibes, Montserrat, Dancing_Script, Playfair_Display } from "next/font/google";
+import {Cinzel_Decorative,Montserrat, Dancing_Script, Playfair_Display } from "next/font/google";
 
-export const parisienne = Parisienne({
+export const cinzelDecorative = Cinzel_Decorative({
     subsets: ["latin"],
-    weight: ["400"],
-    display: "swap",
-    fallback: ["cursive"],
-})
-
-export const greatVibes = Great_Vibes({
-    subsets: ["latin"],
-    weight: ["400"],
-    display: "swap",
-    fallback: ["cursive"],
-})
-
-export const SacramentoFont = Sacramento({
-    subsets: ["latin"],
-    weight: ["400"],
+    weight: ["400", "700"],
     display: "swap",
     fallback: ["cursive"],
 })

@@ -5,19 +5,12 @@
 @layer base {
     :root {
         /* For rgb(255 115 179 / <alpha-value>) */
-        --color-primary: 182 208 209;
-        --color-secondary: 223 227 230;
+        --color-primary: 17 191 191;
+        --color-secondary: 69 85 89;
         --color-terciary: 232 233 240;
-        --color-text:75 85 99;
+        --color-text-primary:69 85 89;
+        --color-text-secondary: 17 191 191;
+
     }
 }
 
-
-/* styles/globals.css o cualquier otro archivo CSS global */
-@font-face {
-    font-family: 'Asmelina Harley';
-    src: url('/AsmelinaHarley.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  

@@ -1,3 +1,5 @@
+
+
 /* Estilo global para asegurar el comportamiento consistente del tamaño de los elementos */
 *,
 *::before,
@@ -43,8 +45,40 @@ main {
   }
   
   .card {
-    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;
+    border-radius: 12px;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
+
+.card h2 {
+    color: #2d3748; /* text-gray-800 */
+    font-size: 1.5rem; /* text-2xl */
+}
+
+.card p {
+    color: #4a5568; /* text-gray-700 */
+    font-size: 1.125rem; /* text-lg */
+}
+
+.card button {
+    color: #fff;
+    background-color: #38b2ac; /* bg-teal-500 */
+    border-radius: 9999px; /* rounded-full */
+    padding: 0.5rem 1.5rem;
+    margin-top: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #319795; /* bg-teal-600 */
+}
   
   .text-party{
     font-size: 2.25rem;
@@ -52,13 +86,24 @@ main {
   }
 
 
+
+
   
   /* Estilo adicional para mejor responsividad */
+  @media (min-width: 1024px) {
+    .card {
+      max-width: 80%; /* Ajuste para pantallas grandes */
+    }
+  }
+
 
 @media (max-width: 1024px) {
   .titleHeadwer {
     font-size: 5rem;
     line-height: 6.5rem;
+  }
+  .card {
+    max-width: 90%;
   }
 }
 
@@ -71,8 +116,11 @@ main {
       line-height: 5.5rem;
     }
     .card {
-      margin-bottom: 1.5rem; /* Espaciado en pantallas pequeñas */
+      max-width: 100%;
+      margin-bottom: 1.5rem;
     }
+  
+ 
   }
 
   @media (max-width: 576px) {
@@ -88,6 +136,11 @@ main {
       font-size: 1.75rem;
       line-height: 1.5rem;
     }
+
+    .card {
+      width: 100%; /* Asegura que la carta tome todo el ancho en pantallas pequeñas */
+    }
+
   }
 
   @media (max-width: 425px) {
@@ -102,6 +155,10 @@ main {
       font-size: 1.75rem;
       line-height: 1.5rem;
     }
+    .card {
+      width: 100%;
+    }
+
   }
 
   
@@ -115,6 +172,10 @@ main {
     .text-party {
       font-size: 1.32rem;
       line-height: 1.5rem;
+    }
+
+    .card {
+      width: 100%;
     }
   }
 
