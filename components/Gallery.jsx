@@ -95,7 +95,7 @@ const Carousel = () => {
           
           {/* Right Arrow */}
           <button
-          onClick={prevSlide}
+          onClick={nextSlide}
           className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-secondary text-white rounded-full focus:outline-none shadow-lg hover:bg-primary transition duration-200 ease-in-out flex items-center justify-center w-8 h-8 hover:scale-110"
         >
           <svg
