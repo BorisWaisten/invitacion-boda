@@ -1,5 +1,7 @@
 'use client'
 import React, { useState } from 'react';
+import { dancingScript, playfairDisplay } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
+import './components.css';
 
 const Asistency = () => {
   const [formData, setFormData] = useState({
@@ -63,48 +65,52 @@ const Asistency = () => {
   return (
     <section id="asistency" className="bg-terciary min-h-screen flex items-center justify-center">
       <div className="container bg-white rounded-xl shadow-2xl p-8 m-10 mx-4 max-w-xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Confirmar Asistencia</h2>
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4">
+        <h2 className= {`text-3xl md:text-4xl font-bold  mb-8 text-center ${dancingScript.className}`} >Confirmar Asistencia</h2>
+        <form onSubmit={handleSubmit} className= {`grid grid-cols-1 gap-4 ${playfairDisplay.className}`} >
           <div className="mb-4">
             <input
               type="text"
+              id='nombre'
               name="nombre"
               placeholder="Nombre"
               value={formData.nombre}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2  rounded-lg shadow-sm "
               required
             />
           </div>
           <div className="mb-4">
             <input
               type="text"
+              id='apellido'
               name="apellido"
               placeholder="Apellido"
               value={formData.apellido}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2  rounded-lg shadow-sm "
               required
             />
           </div>
           <div className="mb-4">
             <input
               type="text"
+              id='parejaNombre'
               name="parejaNombre"
               placeholder="Nombre de tu Pareja (Opcional)"
               value={formData.parejaNombre}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2  rounded-lg shadow-sm "
             />
           </div>
           <div className="mb-4">
             <input
               type="text"
+              id='parejaApellido'
               name="parejaApellido"
               placeholder="Apellido de tu Pareja (Opcional)"
               value={formData.parejaApellido}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2  rounded-lg shadow-sm "
             />
           </div>
           <div className='grid grid-cols-2 gap-4'>
@@ -112,6 +118,7 @@ const Asistency = () => {
               <label className="block text-left">
                 <input
                   type="checkbox"
+                  
                   name="celiaco"
                   checked={formData.celiaco}
                   onChange={handleChange}
@@ -124,6 +131,7 @@ const Asistency = () => {
               <label className="block text-left">
                 <input
                   type="checkbox"
+                
                   name="hipertension"
                   checked={formData.hipertension}
                   onChange={handleChange}
@@ -136,6 +144,7 @@ const Asistency = () => {
               <label className="block text-left">
                 <input
                   type="checkbox"
+                  
                   name="diabetes"
                   checked={formData.diabetes}
                   onChange={handleChange}
@@ -148,6 +157,7 @@ const Asistency = () => {
               <label className="block text-left">
                 <input
                   type="checkbox"
+                  
                   name="hipotension"
                   checked={formData.hipotension}
                   onChange={handleChange}
@@ -160,6 +170,7 @@ const Asistency = () => {
               <label className="block text-left">
                 <input
                   type="checkbox"
+                  
                   name="vegano"
                   checked={formData.vegano}
                   onChange={handleChange}
@@ -172,6 +183,7 @@ const Asistency = () => {
               <label className="block text-left">
                 <input
                   type="checkbox"
+                  
                   name="vegetariano"
                   checked={formData.vegetariano}
                   onChange={handleChange}
@@ -184,22 +196,23 @@ const Asistency = () => {
           <div className="mb-4">
             <textarea
               name="otraInfo"
+              id='otraInfo'
               placeholder="Otra información relevante"
               value={formData.otraInfo}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2  rounded-lg shadow-sm "
               rows="4"
             />
           </div>
+        </form>
           <div className="mb-4">
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-colors"
+              className="w-full px-4 py-2 font-sans bg-primary hover:bg-secondary hover:text-secondary rounded-lg shadow-md hover:bg-blue-600 transition-colors"
             >
               Enviar
             </button>
           </div>
-        </form>
       </div>
     </section>
   );
