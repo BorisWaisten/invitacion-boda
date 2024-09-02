@@ -18,7 +18,7 @@ const Invitation = () => {
       icon: '/fiesta.gif',
       day: 'Sábado 22 - 19 hs',
       place: 'Salón "La Lidia"',
-      location: '743 Dr. Armando H. Zeroli, Urdinarrain, Entre Ríos',
+      location: 'Dr. Zeroli y R20, Urdinarrain, Entre Ríos',
       address: 'https://www.google.com/maps/place/Salon+La+Lidia/@-32.6804494,-58.8802181,601m/data=!3m2!1e3!4b1!4m6!3m5!1s0x95b0448ad599265b:0xc504e79d26eda2aa!8m2!3d-32.6804539!4d-58.8776432!16s%2Fg%2F11c5sm_lgc?entry=ttu',
     },
   ];
@@ -30,14 +30,18 @@ const Invitation = () => {
       {informacion.map((evento, index) => (
         <div key={index} className="card p-6">
           <img src={evento.icon} alt={evento.title} className="w-1/4 mb-4" />
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
             {evento.title}
           </h2>
-          <p className="text-lg font-medium mb-2 text-gray-700">{evento.day}</p>
-          <p className="text-lg font-medium mb-2 text-gray-700">
-            {evento.place}
-          </p>
-          <p className="text-base italic text-gray-600 mb-4">{evento.location}</p>
+          <p className="text-lg font-semibold italic mb-2 ">{evento.day}</p>
+          <div className='flex justify-center  w-3/4 lg:w-1/2  mx-auto'>
+            <p className="text-lg  font-semibold italic mb-2 ">
+              {evento.place}
+            </p>
+          </div>
+          <div className='w-3/4 lg:w-1/2 mx-auto flex  justify-center'>
+            <p className="text-base italic mb-4">{evento.location}</p>
+          </div>
           <button
             className="py-2 px-4 bg-teal-500 text-white rounded-full shadow-md hover:bg-teal-600 transition-colors"
             onClick={() => window.open(evento.address)}

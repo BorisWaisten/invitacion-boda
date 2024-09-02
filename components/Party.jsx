@@ -19,7 +19,7 @@ const Party = () => {
           FIESTA
         </h2>
         <h3 className={`font-bold italic mb-8 `} >
-          !Algunos detalles a tener en cuenta¡
+          ¡Algunos detalles a tener en cuenta!
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Sugerir Canción */}
@@ -30,9 +30,11 @@ const Party = () => {
             <h3 className={`text-2xl font-bold  mb-4 `}>
               MÚSICA
             </h3>
-            <p className={`text-sm sm:text-lg   mb-4 `}>
-              ¿Cuál es la canción que no debe faltar en la PlayList de la fiesta?
-            </p>
+            <div className='w-1/2 mx-auto text-center flex justify-center'>
+              <p className={`text-sm sm:text-lg   mb-4 `}>
+                ¿Cuál es la canción que no debe faltar en la PlayList de la fiesta?
+              </p>
+            </div>
             <button
               onClick={handleSongSuggestionClick}
               className="py-2 px-4 bg-primary text-white font-bold rounded-full shadow-md hover:bg-teal-600 transition-colors"
