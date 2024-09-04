@@ -17,7 +17,7 @@ const Header = () => {
           priority={true} 
           style={{ objectFit: 'cover', filter: 'grayscale(100%)' }}  
         />
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
           <p className="text-lg md:text-2xl lg:text-2xl font-bold m-5 underline">22.03.2025</p>
           <div className="flex flex-col items-center">
             <h1
