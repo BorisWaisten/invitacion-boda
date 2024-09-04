@@ -7,11 +7,11 @@ export const layourMetadata = {
   icons: {
     icon:'',
   },
-  metadataBase: new URL('https://invitacion-boda-blue.vercel.app'), // Agrega esta línea
+  metadataBase: new URL('https://martuygino.vercel.app'), // Agrega esta línea
   openGraph: {
     title: 'M&G - Nuestra Boda',
     description: '¡Nos casamos! Ven y celebra con nosotros este día tan especial.',
-    url: 'https://invitacion-boda-blue.vercel.app/',
+    url: 'https://martuygino.vercel.app/',
     type: 'website',
     images: [{},],
   },
