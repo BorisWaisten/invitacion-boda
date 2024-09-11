@@ -64,7 +64,7 @@ const Asistency = () => {
 
   return (
     <section id="asistency" className="bg-terciary min-h-screen flex items-center justify-center">
-      <div className= {`container bg-white rounded-xl shadow-2xl p-8 m-10 mx-4 max-w-xl ${dancingScript.className}`} >
+      <div className= {`container bg-white rounded-xl shadow-2xl p-8 m-10 mx-4 w-full sm:w-auto ${dancingScript.className}`} >
         <h2 className= {`text-3xl md:text-4xl font-bold mb-8 text-center `} >Confirmar Asistencia</h2>
         <form onSubmit={handleSubmit} className= {`grid grid-cols-1 gap-4 ${playfairDisplay.className}`} >
           <div className="mb-4">

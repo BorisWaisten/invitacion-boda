@@ -2,7 +2,7 @@ import "./globals.css";
 import { montserrat } from "@/public/fonts";
 
 export const layourMetadata = {
-  title: 'M&G - 21/21/2025',
+  title: 'M&G - 22/03/2025',
   description: '¡Nos casamos! Ven y celebra con nosotros este día tan especial.',
   icons: {
     icon:'',

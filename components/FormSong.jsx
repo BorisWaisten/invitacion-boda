@@ -17,15 +17,12 @@ export default function SongCompontPage (){
 
   return (
  <main className="min-h-screen m-0 bg-terciary flex flex-col items-center justify-center">
-    <section className= {` m-10 w-[100vh]  bg-white rounded-xl shadow-2xl  p-10 ${dancingScript.className}`} >
+    <section className= {` m-10 w-full sm:w-auto  bg-white rounded-xl shadow-2xl  p-10 ${dancingScript.className}`} >
         <h2 className={`text-4xl font-bold text-center mb-8 `}>
           Sugerir Canción
         </h2>
         <form onSubmit={handleSubmit} className= {`w-full mx-auto ${playfairDisplay.className}`} >
           <div className="mb-4">
-            <label className={`block text-xl font-bold  mb-2 `} htmlFor="songName">
-              Nombre de la Canción
-            </label>
             <input
               id="songName"
               type="text"
@@ -35,9 +32,6 @@ export default function SongCompontPage (){
             />
           </div>
           <div className="mb-4">
-            <label className={`block text-xl font-bold  mb-2 `} htmlFor="songAuthor">
-              Autor de la Canción
-            </label>
             <input
               id="songAuthor"
               type="text"
@@ -47,14 +41,11 @@ export default function SongCompontPage (){
             />
           </div>
           <div className="mb-4">
-            <label className={`block text-xl font-bold  mb-2 `} htmlFor="songLink">
-              Link de la Canción
-            </label>
             <input
               id="songLink"
               type="url"
               className={`w-full p-2 border rounded-lg  `}
-              placeholder="Link de la canción (YouTube, Spotify, etc.)"
+              placeholder="Link de la canción "
               
             />
           </div>

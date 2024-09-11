@@ -13,15 +13,15 @@ const Party = () => {
   };
 
   return (
-    <section className="mt-5 py-8">
-      <div className="container text-center">
-        <h2 className={`text-3xl font-bold mb-8 `}>
-          FIESTA
+    <section className="mt-5 py-8 ">
+      <div className="container text-center mx-auto">
+        <h2 className="titleParty text-3xl font-bold mb-8 " >
+         SOBRE LA FIESTA
         </h2>
         <h3 className={`font-bold italic mb-8 `} >
           ¡Algunos detalles a tener en cuenta!
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
           {/* Sugerir Canción */}
           <div className='p-4'>
              <div className='flex justify-center'>

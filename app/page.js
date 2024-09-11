@@ -28,8 +28,8 @@ export const metadata = {
 
 const Home = () => {
   return (
-    <div className="min-h-screen  flex flex-col items-center justify-center">
-      <main className="w-full max-w-7xl rounded-lg ">
+    <div className=" flex flex-col items-center justify-center">
+      <main className='w-full m-0 p-0'>
         <Header />
         <section id="date" >
           <Date />
