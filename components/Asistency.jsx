@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { dancingScript, playfairDisplay } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
 import './components.css';
+import { useRouter } from 'next/navigation';
 
 const Asistency = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +18,8 @@ const Asistency = () => {
     vegetariano: false,
     otraInfo: '',
   });
+
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -205,13 +208,21 @@ const Asistency = () => {
             />
           </div>
         </form>
-          <div className="mb-4">
-            <button
+        <div className='grid grid-cols-2 gap-4 flex justify-center'>
+
+          <button
               type="submit"
-              className="w-full px-4 py-2 font-bold font-sans bg-primary hover:bg-secondary hover:text-secondary rounded-lg shadow-md hover:bg-blue-600 transition-colors"
-            >
-              Enviar
-            </button>
+              className={`p-2 font-sans bg-primary hover:bg-secondary hover:text-secondary  font-bold rounded-lg  transform duration-300 ease-in-out`}
+          >
+              Enviar Sugerencia
+          </button>
+          <button
+            type="button"
+            className="  font-bold font-sans bg-primary hover:bg-secondary hover:text-secondary rounded-lg shadow-md hover:bg-blue-600 transition-colors"
+            onClick={() => router.push('/')}
+          >
+            Volver
+          </button>
           </div>
       </div>
     </section>

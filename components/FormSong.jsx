@@ -49,13 +49,20 @@ export default function SongCompontPage (){
               
             />
           </div>
-          <div className='flex justify-center'>
+          <div className='grid grid-cols-2 gap-4 flex justify-center'>
 
             <button
                 type="submit"
-                className={`mt-4 py-2 px-4 font-sans bg-primary hover:bg-secondary hover:text-secondary  font-bold rounded-lg  transform duration-300 ease-in-out`}
+                className={`p-2 font-sans bg-primary hover:bg-secondary hover:text-secondary  font-bold rounded-lg  transform duration-300 ease-in-out`}
             >
                 Enviar Sugerencia
+            </button>
+            <button
+              type="button"
+              className="  font-bold font-sans bg-primary hover:bg-secondary hover:text-secondary rounded-lg shadow-md hover:bg-blue-600 transition-colors"
+              onClick={() => router.push('/')}
+           >
+              Volver
             </button>
           </div>
         </form>
