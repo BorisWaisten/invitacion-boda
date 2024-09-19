@@ -15,7 +15,7 @@ const Party = () => {
   return (
       <div className="relative container mt-5 py-8 text-center mx-auto">
         <img
-          className="absolute  w-[50vw] left-[-30vw] top-[-10vw] lg:top-[-10vw] lg:left-[-15vw] lg:w-[40vw] md:w-[50vw] md:top-[-10vw] md:left-[-23vw] rotate-[-15deg] transform translate-x-[30px] translate-y-[30px]"
+          className="absolute  w-[50vw] left-[-30vw] top-[-10vw] lg:top-[-10vw] lg:left-[-21vw] lg:w-[40vw] md:w-[50vw] md:top-[-10vw] md:left-[-23vw] rotate-[-15deg] transform translate-x-[30px] translate-y-[30px]"
           src="/flor.svg"
           alt="Flor inferior"
         />
