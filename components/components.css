@@ -27,18 +27,18 @@
 .titleParty::before {
   content: '';
   display: block;
-  width: 57%; /* Predeterminado para pantallas pequeñas */
+  width: 32%; /* Predeterminado para pantallas pequeñas */
   height: 2px; 
   background-color: rgb(var(--color-secondary));
   opacity: 0.5;
-  margin: 0 auto 8px;
+  margin: 0 auto 2px;
 }
 
 
 
 @media (max-width: 368px) {
   .titleParty::before {
-    width: 53%; /* Ajuste para pantallas medianas */
+    width: 40%; /* Ajuste para pantallas medianas */
   }
 }
 
@@ -57,16 +57,16 @@
 .titleParty::after {
   content: '';
   display: block;
-  width: 57%; /* Predeterminado para pantallas pequeñas */
+  width: 32%; /* Predeterminado para pantallas pequeñas */
   height: 2px; 
   background-color: rgb(var(--color-secondary));
-  margin: 8px auto 0;
+  margin: 2px auto 0;
 }
 
 
 @media (max-width: 368px) {
   .titleParty::after {
-    width: 53%; /* Ajuste para pantallas medianas */
+    width: 40%; /* Ajuste para pantallas medianas */
   }
 }
 

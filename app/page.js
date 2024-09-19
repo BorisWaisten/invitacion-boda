@@ -11,9 +11,6 @@ import { layourMetadata } from './layout';
 
 export const metadata = {
   ...layourMetadata,
-  icons: {
-    icon: '/logo.png',
-  },
   openGraph: {
     images: [
       {

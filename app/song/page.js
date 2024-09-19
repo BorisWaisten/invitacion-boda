@@ -1,9 +1,14 @@
 import SongCompontPage from "@/components/FormSong"; 
-const SongSuggestionPage = () => {
-  
+import { layourMetadata } from "../layout.js";
+
+export const metadata = {
+    ...layourMetadata,
+    icons: {
+      icon: '/logo.ico',
+    },
+  }
+export default function SongSuggestionPage ()  {
   return (
     <SongCompontPage />
   );
 };
-
-export default SongSuggestionPage;

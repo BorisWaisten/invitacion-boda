@@ -5,7 +5,7 @@ export const layourMetadata = {
   title: 'M&G - 22/03/2025',
   description: '¡Nos casamos! Ven y celebra con nosotros este día tan especial.',
   icons: {
-    icon:'',
+    icon:'/logo.ico',
   },
   metadataBase: new URL('https://martuygino.vercel.app'), // Agrega esta línea
   openGraph: {

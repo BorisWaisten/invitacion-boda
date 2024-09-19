@@ -13,12 +13,16 @@ const Party = () => {
   };
 
   return (
-    <section className="mt-5 py-8 ">
-      <div className="container text-center mx-auto">
-        <h2 className="titleParty text-3xl font-bold mb-8 " >
+      <div className="relative container mt-5 py-8 text-center mx-auto">
+        <img
+          className="absolute  w-[50vw] left-[-30vw] top-[-10vw] lg:top-[-10vw] lg:left-[-15vw] lg:w-[40vw] md:w-[50vw] md:top-[-10vw] md:left-[-23vw] rotate-[-15deg] transform translate-x-[30px] translate-y-[30px]"
+          src="/flor.svg"
+          alt="Flor inferior"
+        />
+        <h2 className="titleParty text-lg md:text-3xl lg:text-3xl font-bold mb-8 " >
          SOBRE LA FIESTA
         </h2>
-        <h3 className={`font-bold italic mb-8 `} >
+        <h3 className={`font-bold text-xs md:text-lg lg:text-xl italic mb-8 `} >
           ¡Algunos detalles a tener en cuenta!
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
@@ -63,7 +67,6 @@ const Party = () => {
           </div>
         </div>
       </div>
-    </section>
   );
 };
 
