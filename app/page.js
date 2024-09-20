@@ -26,7 +26,7 @@ export const metadata = {
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center overflow-x-hidden"> {/* Agrega overflow-x-hidden */}
       <main className='w-full m-0 p-0'>
         <Header />
         <section id="date">
@@ -47,7 +47,6 @@ const Home = () => {
         <section id="asistency">
           <ConfirmarAsistencia />
         </section>
-      
       </main>
       <Footer />
       <MusicPlayer />
