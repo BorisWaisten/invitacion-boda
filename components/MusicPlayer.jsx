@@ -1,11 +1,20 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './components.css';
 
 const MusicPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false); // Iniciar en pausa
   const iframeRef = useRef(null);
+
+  // Al montar el componente, asegúrate de que el video esté en pausa
+  useEffect(() => {
+    const iframeWindow = iframeRef.current?.contentWindow;
+    if (iframeWindow) {
+      // Pausar la música inicialmente
+      iframeWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    }
+  }, []);
 
   const togglePlay = () => {
     const iframeWindow = iframeRef.current.contentWindow;
@@ -26,7 +35,7 @@ const MusicPlayer = () => {
         ref={iframeRef}
         width="0"
         height="0"
-        src="https://www.youtube.com/embed/j09cI6t18NA?enablejsapi=1&autoplay=1&loop=1&playlist=j09cI6t18NA"
+        src="https://www.youtube.com/embed/j09cI6t18NA?enablejsapi=1&autoplay=0&loop=1&playlist=j09cI6t18NA"
         style={{ position: 'absolute', width: '0px', height: '0px', border: 'none', overflow: 'hidden' }}
         allow="autoplay; encrypted-media"
         allowFullScreen
@@ -37,12 +46,13 @@ const MusicPlayer = () => {
       {/* Botón con SVG animado */}
       <button
         onClick={togglePlay}
+        onTouchStart={togglePlay}  
         className={`relative p-1 bg-primary rounded-full transition-all duration-300 ${isPlaying ? 'animate-shadow-expand' : ''}`}
       >
         <img
           src="/reproduccion.svg" // Asegúrate de que el SVG esté en la carpeta public
           alt="Botón de música"
-          className={` w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 ${isPlaying ? 'animate-jump' : ''}`} // Animación de "saltitos"
+          className={`w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 ${isPlaying ? 'animate-jump' : ''}`} // Animación de "saltitos"
         />
       </button>
     </div>
