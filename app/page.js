@@ -47,11 +47,9 @@ const Home = () => {
         <section id="asistency">
           <ConfirmarAsistencia />
         </section>
-      </main>
-
-      {/* Colocamos el componente MusicPlayer para que siempre esté visible */}
-      <MusicPlayer />
+        <MusicPlayer />
       
+      </main>
       <Footer />
     </div>
   );
