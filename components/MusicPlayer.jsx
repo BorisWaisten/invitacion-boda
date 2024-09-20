@@ -1,27 +1,20 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import './components.css';
 
 const MusicPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const iframeRef = useRef(null);
-  const videoRef = useRef(null);
 
   const togglePlay = () => {
     const iframeWindow = iframeRef.current.contentWindow;
     if (isPlaying) {
       // Pausar la música de YouTube
       iframeWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-
-      // Reiniciar y pausar el video
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
     } else {
       // Reanudar la música de YouTube
       iframeWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-
-      // Reproducir el video
-      videoRef.current.play();
     }
     setIsPlaying(!isPlaying);
   };
@@ -41,18 +34,15 @@ const MusicPlayer = () => {
         aria-hidden="true"
       ></iframe>
 
-      {/* Botón para pausar/reanudar con el video animado */}
+      {/* Botón con SVG animado */}
       <button
         onClick={togglePlay}
-        className="relative p-2 rounded-full transition-all duration-300"
+        className={`relative p-1 bg-primary rounded-full transition-all duration-300 ${isPlaying ? 'animate-shadow-expand' : ''}`}
       >
-        <video 
-          ref={videoRef} 
-          src="/reproduccion.mp4" 
-          className='w-10 h-10 rounded-full' 
-          loop 
-          muted 
-          onEnded={() => setIsPlaying(false)} 
+        <img
+          src="/reproduccion.svg" // Asegúrate de que el SVG esté en la carpeta public
+          alt="Botón de música"
+          className={` w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 ${isPlaying ? 'animate-jump' : ''}`} // Animación de "saltitos"
         />
       </button>
     </div>
