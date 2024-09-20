@@ -1,7 +1,6 @@
 'use client'
 
 import { useRouter } from "next/navigation";
-import { cinzelDecorative } from "@/public/fonts";
 
 export default function ConfirmarAsistencia() {
     const router = useRouter();
