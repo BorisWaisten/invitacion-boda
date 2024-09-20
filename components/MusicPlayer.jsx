@@ -3,8 +3,7 @@
 import { useState, useRef } from 'react';
 
 const MusicPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const iframeRef = useRef(null);
   const videoRef = useRef(null);
 
@@ -17,14 +16,12 @@ const MusicPlayer = () => {
       // Reiniciar y pausar el video
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
-      setIsAnimating(false); // Detener la animación
     } else {
       // Reanudar la música de YouTube
       iframeWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
 
       // Reproducir el video
       videoRef.current.play();
-      setIsAnimating(true); // Iniciar la animación
     }
     setIsPlaying(!isPlaying);
   };
@@ -49,7 +46,6 @@ const MusicPlayer = () => {
         onClick={togglePlay}
         className="relative p-2 rounded-full transition-all duration-300"
       >
-        {isAnimating && <div className="wave-effect animate-wave" />}
         <video 
           ref={videoRef} 
           src="/reproduccion.mp4" 
