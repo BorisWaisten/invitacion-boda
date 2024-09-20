@@ -45,8 +45,7 @@ const MusicPlayer = () => {
 
       {/* Botón con SVG animado */}
       <button
-        onClick={togglePlay}
-        onTouchStart={togglePlay}  
+        onClick={togglePlay} // Usa solo onClick para manejar tanto clic como touch
         className={`relative p-1 bg-primary rounded-full transition-all duration-300 ${isPlaying ? 'animate-shadow-expand' : ''}`}
       >
         <img
