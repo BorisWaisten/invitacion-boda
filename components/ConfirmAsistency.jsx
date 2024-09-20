@@ -5,7 +5,6 @@ import { cinzelDecorative } from "@/public/fonts";
 
 export default function ConfirmarAsistencia() {
     const router = useRouter();
-    
     return (
       <div className=" text-center py-10">
         <div className="flex justify-center ">
