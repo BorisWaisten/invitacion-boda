@@ -178,7 +178,7 @@ main {
 
 .card button {
     color: #fff;
-    background-color: #38b2ac; /* bg-teal-500 */
+    background-color: rgb(var(--color-primary));
     border-radius: 9999px; /* rounded-full */
     padding: 0.5rem 1.5rem;
     margin-top: auto;
@@ -187,7 +187,7 @@ main {
 }
 
 .card button:hover {
-    background-color: #319795; /* bg-teal-600 */
+    background-color: rgb(var(--color-primary));
 }
   
   .text-party{

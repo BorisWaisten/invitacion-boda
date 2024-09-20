@@ -1,7 +1,6 @@
 'use client'
 
 import { useRouter } from "next/navigation";
-import { cinzelDecorative } from "@/public/fonts";
 
 export default function ConfirmarAsistencia() {
     const router = useRouter();
@@ -10,7 +9,7 @@ export default function ConfirmarAsistencia() {
         <div className="flex justify-center ">
           <img className="w-1/6 mb-5" src="/confirmacion.gif" alt="" />
         </div>
-        <h2 className= {`${cinzelDecorative.className} text-secondary  text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 `}>
+        <h2 className= {` text-secondary  text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 `}>
           CONFIRMACIÓN DE ASISTENCIA
         </h2>
         <p className=" text-xs sm:text-sm md:text-base lg:text-lg mb-6 italic font-semibold">

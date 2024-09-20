@@ -43,7 +43,7 @@ const Invitation = () => {
             <p className="text-base italic mb-4">{evento.location}</p>
           </div>
           <button
-            className="py-2 px-4 bg-teal-500 text-white rounded-full shadow-md hover:bg-teal-600 transition-colors"
+            className="py-2 px-4 bg-primary text-white rounded-full shadow-md hover:bg-primary transition-colors"
             onClick={() => window.open(evento.address)}
           >
             Cómo Llegar

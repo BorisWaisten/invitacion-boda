@@ -20,7 +20,7 @@ const Header = () => {
     {/* Capa de superposición con gradiente oscuro */}
     <div className="absolute inset-0 bg-black/35"></div>
     <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-      <p className="text-lg md:text-2xl lg:text-2xl font-bold m-5 underline">22.03.2025</p>
+      <p className="text-lg md:text-2xl lg:text-3xl font-bold mb-4 md:mb-[15vw] lg:mb-[15vw] underline">22.03.2025</p>
       <div className="flex flex-col items-center">
         <h1 className={`titleHeader text-center ${cinzelDecorative.className}`}>
           Martu & Gino

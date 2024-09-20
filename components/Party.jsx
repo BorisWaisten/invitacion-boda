@@ -41,7 +41,7 @@ const Party = () => {
             </div>
             <button
               onClick={handleSongSuggestionClick}
-              className="py-2 px-4 bg-primary text-white font-bold rounded-full shadow-md hover:bg-teal-600 transition-colors"
+              className="py-2 px-4 bg-primary text-white font-bold rounded-full shadow-md hover:bg-primary transition-colors"
               >
               SUGERIR CANCIÓN
             </button>
@@ -59,7 +59,7 @@ const Party = () => {
               Formal - Elegante
             </p>
             <button
-            className="mt-6 py-2 px-4 bg-primary text-white font-bold rounded-full shadow-md hover:bg-teal-600 transition-colors"
+            className="mt-6 py-2 px-4 bg-primary text-white font-bold rounded-full shadow-md hover:bg-primary transition-colors"
             onClick={() => router.push('/outfits')}
             >
               INSPIRATE
