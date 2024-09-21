@@ -288,4 +288,46 @@ main {
       width: 100%;
     }
   }
+  @keyframes jump {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(7deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(-7deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .animate-jump {
+    animation: jump 1s linear infinite;
+  }
+  
+  /* Expansión de la sombra */
+  @keyframes shadow-expand {
+    0% {
+      box-shadow: 0 0 2px 0px rgba(17, 191, 191, .5 );
+    }
+    50% {
+      box-shadow: 0 0 5px 2px rgba(17, 191, 191, .5 );
+    }
+    100% {
+      box-shadow: 0 0 6px 5px rgba(17, 191, 191, .5 );
+    }
+  }
+  
+  .animate-shadow-expand {
+    animation: shadow-expand 2s linear infinite;
+  }
+  
+  
+  
 
+ 

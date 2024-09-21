@@ -8,6 +8,7 @@ import Date from '@/components/Date';
 import Regalos from '@/components/Gifts';
 import ConfirmarAsistencia from '@/components/ConfirmAsistency';
 import { layourMetadata } from './layout';
+import MusicPlayer from '@/components/MusicPlayer'; // Importa el nuevo componente
 
 export const metadata = {
   ...layourMetadata,
@@ -28,13 +29,13 @@ const Home = () => {
     <div className=" flex flex-col items-center justify-center overflow-x-hidden">
       <main className='w-full m-0 p-0'>
         <Header />
-        <section id="date" >
+        <section id="date">
           <Date />
         </section>
         <section id="invitation">
           <Invitation />
         </section>
-        <section id="gallery" className='custom-shadow   mt-10'>
+        <section id="gallery" className='custom-shadow mt-10'>
           <Gallery />
         </section>
         <section id='party'> 
@@ -48,6 +49,7 @@ const Home = () => {
         </section>
       </main>
       <Footer />
+      <MusicPlayer />
     </div>
   );
 };
