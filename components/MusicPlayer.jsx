@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import './components.css';
 
 const MusicPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(true); // Iniciar en pausa
+  const [isPlaying, setIsPlaying] = useState(false);
   const iframeRef = useRef(null);
 
   // Al montar el componente, asegúrate de que el video esté en pausa
@@ -13,6 +13,7 @@ const MusicPlayer = () => {
     if (iframeWindow) {
       // Pausar la música inicialmente
       iframeWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      setIsPlaying(false);
     }
   }, []);
 
