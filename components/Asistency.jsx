@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react';
-import { dancingScript, playfairDisplay } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
 import './components.css';
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
 const Asistency = () => {
   const [formData, setFormData] = useState({
@@ -10,12 +10,7 @@ const Asistency = () => {
     apellido: '',
     parejaNombre: '',
     parejaApellido: '',
-    celiaco: false,
-    diabetes: false,
-    hipertension: false,
-    hipotension: false,
-    vegano: false,
-    vegetariano: false,
+    condiciones: '', // Nuevo atributo para almacenar condiciones
     otraInfo: '',
   });
 
@@ -31,45 +26,56 @@ const Asistency = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyxsn5x1UD6Z5PgHSsKWB3lhLpkmkuVtAWT3caZp51da17YLEV9jVGAmSPtY_hJKkoE/exec', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    
+    // Combina los valores de los checkboxes en un solo string
+    const condiciones = [
+      formData.celiaco && 'Celiaco',
+      formData.diabetes && 'Diabetes',
+      formData.hipertension && 'Hipertensión',
+      formData.hipotension && 'Hipotensión',
+      formData.vegano && 'Vegano',
+      formData.vegetariano && 'Vegetariano',
+    ].filter(Boolean).join(', ');
 
-      if (response.ok) {
-        alert('¡Información enviada con éxito!');
-        setFormData({
-          nombre: '',
-          apellido: '',
-          parejaNombre: '',
-          parejaApellido: '',
-          celiaco: false,
-          diabetes: false,
-          hipertension: false,
-          hipotension: false,
-          vegano: false,
-          vegetariano: false,
-          otraInfo: '',
-        });
-        window.location('/');
-      } else {
-        alert('Hubo un error al enviar la información.');
+    const dataToSend = {
+      ...formData,
+      condiciones, // Agrega el string de condiciones al objeto
+    };
+
+    try {
+
+      const nameExists = await axios.get(`https://sheet.best/api/sheets/ff06f600-9163-4e3c-b414-87a2a72a7ef5/nombre/${formData.nombre}`);
+      const lastNameExists = await axios.get(`https://sheet.best/api/sheets/ff06f600-9163-4e3c-b414-87a2a72a7ef5/apellido/${formData.apellido}`);
+    
+      console.log(nameExists.data, lastNameExists.data);
+      
+      if (nameExists.data.length > 0 && lastNameExists.data.length > 0) {
+        console.log(nameExists.data, lastNameExists.data);
+        alert('El nombre ya existe en la base de datos');
+        return;
       }
+
+      await axios.post('https://sheet.best/api/sheets/ff06f600-9163-4e3c-b414-87a2a72a7ef5', dataToSend);
+      alert('¡Información enviada con éxito!');
+      setFormData({
+        nombre: '',
+        apellido: '',
+        parejaNombre: '',
+        parejaApellido: '',
+        condiciones: '', // Reinicia el campo de condiciones
+        otraInfo: '',
+      });
+      router.push('/#asistency');
     } catch (error) {
-      console.error('Error al enviar el formulario:', error);
-      alert('Error de red.');
+      console.log(error);
     }
   };
 
   return (
     <section id="asistency" className="bg-terciary min-h-screen flex items-center justify-center">
-      <div className= {`container bg-white rounded-xl shadow-2xl p-8 m-10 mx-4 w-full sm:w-auto ${dancingScript.className}`} >
-        <h2 className= {`text-3xl md:text-4xl font-bold mb-8 text-center `} >Confirmar Asistencia</h2>
-        <form onSubmit={handleSubmit} className= {`grid grid-cols-1 gap-4 ${playfairDisplay.className}`} >
+      <div className={`container bg-white rounded-xl shadow-2xl p-8 m-10 mx-4 w-full sm:w-auto`}>
+        <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center`}>Confirmar Asistencia</h2>
+        <form onSubmit={handleSubmit} className={`grid grid-cols-1 gap-4`}>
           <div className="mb-4">
             <input
               type="text"
@@ -78,7 +84,7 @@ const Asistency = () => {
               placeholder="Nombre"
               value={formData.nombre}
               onChange={handleChange}
-              className="w-full px-4 py-2  rounded-lg shadow-sm "
+              className="w-full px-4 py-2 rounded-lg shadow-sm"
               required
             />
           </div>
@@ -90,7 +96,7 @@ const Asistency = () => {
               placeholder="Apellido"
               value={formData.apellido}
               onChange={handleChange}
-              className="w-full px-4 py-2  rounded-lg shadow-sm "
+              className="w-full px-4 py-2 rounded-lg shadow-sm"
               required
             />
           </div>
@@ -102,7 +108,7 @@ const Asistency = () => {
               placeholder="Nombre de tu Pareja (Opcional)"
               value={formData.parejaNombre}
               onChange={handleChange}
-              className="w-full px-4 py-2  rounded-lg shadow-sm "
+              className="w-full px-4 py-2 rounded-lg shadow-sm"
             />
           </div>
           <div className="mb-4">
@@ -113,7 +119,7 @@ const Asistency = () => {
               placeholder="Apellido de tu Pareja (Opcional)"
               value={formData.parejaApellido}
               onChange={handleChange}
-              className="w-full px-4 py-2  rounded-lg shadow-sm "
+              className="w-full px-4 py-2 rounded-lg shadow-sm"
             />
           </div>
           <div className='grid grid-cols-2 gap-4'>
@@ -121,7 +127,6 @@ const Asistency = () => {
               <label className="block text-left">
                 <input
                   type="checkbox"
-                  
                   name="celiaco"
                   checked={formData.celiaco}
                   onChange={handleChange}
@@ -134,7 +139,6 @@ const Asistency = () => {
               <label className="block text-left">
                 <input
                   type="checkbox"
-                
                   name="hipertension"
                   checked={formData.hipertension}
                   onChange={handleChange}
@@ -147,7 +151,6 @@ const Asistency = () => {
               <label className="block text-left">
                 <input
                   type="checkbox"
-                  
                   name="diabetes"
                   checked={formData.diabetes}
                   onChange={handleChange}
@@ -160,7 +163,6 @@ const Asistency = () => {
               <label className="block text-left">
                 <input
                   type="checkbox"
-                  
                   name="hipotension"
                   checked={formData.hipotension}
                   onChange={handleChange}
@@ -173,7 +175,6 @@ const Asistency = () => {
               <label className="block text-left">
                 <input
                   type="checkbox"
-                  
                   name="vegano"
                   checked={formData.vegano}
                   onChange={handleChange}
@@ -186,7 +187,6 @@ const Asistency = () => {
               <label className="block text-left">
                 <input
                   type="checkbox"
-                  
                   name="vegetariano"
                   checked={formData.vegetariano}
                   onChange={handleChange}
@@ -203,27 +203,26 @@ const Asistency = () => {
               placeholder="Otra información relevante"
               value={formData.otraInfo}
               onChange={handleChange}
-              className="w-full px-4 py-2  rounded-lg shadow-sm "
+              className="w-full px-4 py-2 rounded-lg shadow-sm"
               rows="4"
             />
           </div>
-        </form>
-        <div className='grid grid-cols-2 gap-4 flex justify-center'>
-
-          <button
+          <div className='grid grid-cols-2 gap-4 flex justify-center'>
+            <button
               type="submit"
-              className={`p-2 font-sans bg-primary hover:bg-secondary hover:text-secondary  font-bold rounded-lg  transform duration-300 ease-in-out`}
-          >
-              Enviar Sugerencia
-          </button>
-          <button
-            type="button"
-            className="  font-bold font-sans bg-primary hover:bg-secondary hover:text-secondary rounded-lg shadow-md hover:bg-blue-600 transition-colors"
-            onClick={() => router.push('/')}
-          >
-            Volver
-          </button>
+              className={`p-2 font-sans bg-primary hover:bg-secondary hover:text-secondary font-bold rounded-lg transform duration-300 ease-in-out`}
+            >
+              Confirmar
+            </button>
+            <button
+              type="button"
+              className="font-bold font-sans bg-primary hover:bg-secondary hover:text-secondary rounded-lg shadow-md hover:bg-blue-600 transition-colors"
+              onClick={() => router.push('/#asistency')}
+            >
+              Volver
+            </button>
           </div>
+        </form>
       </div>
     </section>
   );
