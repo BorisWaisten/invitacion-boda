@@ -60,7 +60,7 @@ export default function SongCompontPage (){
             <button
               type="button"
               className="  font-bold font-sans bg-primary hover:bg-secondary hover:text-secondary rounded-lg shadow-md hover:bg-blue-600 transition-colors"
-              onClick={() => router.push('/')}
+              onClick={() => router.push('/#party')}
            >
               Volver
             </button>

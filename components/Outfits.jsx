@@ -25,7 +25,7 @@ export default function Outfits() {
           Catálogo de Vestimenta
         </h1>
         <button
-          onClick={() => router.push('/')}
+          onClick={() => router.push('/#party')}
           className="inline-flex items-center bg-primary text-white py-2 px-4 rounded-full shadow-lg hover:bg-secondary transition-colors mx-auto sm:absolute sm:left-0 sm:top-1/2 sm:transform sm:-translate-y-1/2"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mr-2 transition-transform duration-300 ease-in-out hover:-translate-x-1">
