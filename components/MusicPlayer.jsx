@@ -5,30 +5,37 @@ import './components.css';
 
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [cont,setCont] = useState(0);
   const iframeRef = useRef(null);
 
-  // Asegúrate de que el video esté en pausa al montar el componente
-  useEffect(() => {
+   // Asegúrate de que el video esté en pausa al montar el componente
+   useEffect(() => {
     const iframeWindow = iframeRef.current?.contentWindow;
     if (iframeWindow) {
-      // Pausar la música inicialmente
+      setCont(0); // Reiniciar el contador al montar el componente
       iframeWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-      setIsPlaying(false);
     }
   }, []);
 
   const togglePlay = () => {
-    const iframeWindow = iframeRef.current.contentWindow;
+    const iframeWindow = iframeRef.current?.contentWindow;
 
-    if (isPlaying) {
-      // Pausar la música de YouTube
-      iframeWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-    } else {
-      // Reanudar la música de YouTube
+    // Si es el primer clic (cont === 0), reproducir el video
+    if (cont === 0) {
       iframeWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      setIsPlaying(true); // Establecer como "reproduciendo"
+    } else {
+      // Si el contador es mayor que 0, alternar entre reproducir y pausar
+      if (isPlaying) {
+        iframeWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      } else {
+        iframeWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      }
+      setIsPlaying(!isPlaying); // Alternar el estado de isPlaying
     }
-    
-    setIsPlaying(!isPlaying);
+
+    // Incrementar el contador en cada clic
+    setCont(prev => prev + 1);
   };
 
   return (
