@@ -1,5 +1,5 @@
 
-import InfoGifts from "@/components/InfoGifts.jsx";
+import InfoGifts from "@/components/Gifts/InfoGifts.jsx";
 import { layourMetadata } from "../layout.js";
 
 export const metadata = {

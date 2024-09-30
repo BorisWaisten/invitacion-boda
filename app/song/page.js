@@ -1,4 +1,4 @@
-import SongCompontPage from "@/components/FormSong"; 
+import SongCompontPage from "@/components/Party/FormSong.jsx"; 
 import { layourMetadata } from "../layout.js";
 
 export const metadata = {
