@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import '../components.css';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import { set } from 'date-fns';
 
 const Asistency = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +14,10 @@ const Asistency = () => {
     condiciones: '', // Nuevo atributo para almacenar condiciones
     otraInfo: '',
   });
-
+  const [message, setMessage] = useState({
+    contenido: '',
+    fallido: false,   
+  }); 
   const router = useRouter();
 
   const handleChange = (e) => {
@@ -46,17 +50,38 @@ const Asistency = () => {
 
       const nameExists = await axios.get(`https://sheet.best/api/sheets/ff06f600-9163-4e3c-b414-87a2a72a7ef5/nombre/${formData.nombre}`);
       const lastNameExists = await axios.get(`https://sheet.best/api/sheets/ff06f600-9163-4e3c-b414-87a2a72a7ef5/apellido/${formData.apellido}`);
-    
-      console.log(nameExists.data, lastNameExists.data);
-      
+          
       if (nameExists.data.length > 0 && lastNameExists.data.length > 0) {
-        console.log(nameExists.data, lastNameExists.data);
-        alert('El nombre ya existe en la base de datos');
+        setMessage({
+          contenido: 'Ya se encuentra registrado',
+          fallido: true,
+        })
+        setTimeout(() => {
+          setMessage({
+            contenido: '',
+            fallido: false,
+          })
+          setFormData({
+            nombre: '',
+            apellido: '',
+            parejaNombre: '',
+            parejaApellido: '',
+            celiaco: false,
+            diabetes: false,
+            hipertension: false,
+            hipotension: false,
+            vegano: false,
+            vegetariano: false,
+            otras: '',
+          })
+        }, 3000);
         return;
       }
 
       await axios.post('https://sheet.best/api/sheets/ff06f600-9163-4e3c-b414-87a2a72a7ef5', dataToSend);
-      alert('¡Información enviada con éxito!');
+      setMessage({
+        contenido: 'Información enviada correctamente',
+        fallido: false,});
       setFormData({
         nombre: '',
         apellido: '',
@@ -65,9 +90,37 @@ const Asistency = () => {
         condiciones: '', // Reinicia el campo de condiciones
         otraInfo: '',
       });
-      router.push('/#asistency');
+      setTimeout(() => {
+        setMessage({
+          contenido: '',
+        });  // Limpia el mensaje después de un tiempo
+        router.push('/#asistency');
+      }, 3000);
     } catch (error) {
       console.log(error);
+      setMessage({
+        contenido: 'Error al enviar la información',
+        fallido: true,
+      })
+      setTimeout(() => {
+        setMessage({
+          contenido: '',
+          fallido: false,
+        })
+        setFormData({
+          nombre: '',
+          apellido: '',
+          parejaNombre: '',
+          parejaApellido: '',
+          celiaco: false,
+          diabetes: false,
+          hipertension: false,
+          hipotension: false,
+          vegano: false,
+          vegetariano: false,
+          otras: '',
+        })
+      }, 3000);
     }
   };
 
@@ -223,6 +276,16 @@ const Asistency = () => {
             </button>
           </div>
         </form>
+        {!message.fallido && (
+          <div className="m-4 text-center text-green-600 font-bold">
+            {message.contenido}
+          </div>
+        )}
+        {message.fallido && (
+          <div className="m-4 text-center text-red-600 font-bold">
+            {message.contenido}
+          </div>
+        )}
       </div>
     </section>
   );
