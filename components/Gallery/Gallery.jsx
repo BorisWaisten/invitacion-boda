@@ -1,15 +1,21 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import w1 from '../../app/public/martu2.jpg';
+
+import w1 from '../../app/public/martu1.jpg';
+import w2 from '../../app/public/martu2.jpg';
 import w3 from '../../app/public/martu3.jpg';
 import w4 from '../../app/public/martu4.jpg';
 import w5 from '../../app/public/martu5.jpg';
+import w6 from '../../app/public/martu6.jpg';
+import w7 from '../../app/public/martu7.jpg';
+import w8 from '../../app/public/martu8.png';
+
 import '../components.css';
 import iconSvg from '../../public/iconCamara.svg';
 import { cinzelDecorative } from '@/public/fonts';
 
-const images = [w1, w5, w3, w4, w1, w5, w3, w4, w5];
+const images = [w1, w2, w3, w4, w5, w6, w7, w8];
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
