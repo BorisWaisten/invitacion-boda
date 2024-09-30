@@ -1,14 +1,14 @@
 'use client';
 
-import image1 from '../app/public/vestimenta/1.jpg';
-import image2 from '../app/public/vestimenta/2.jpg';
-import image3 from '../app/public/vestimenta/3.jpg';
-import image4 from '../app/public/vestimenta/4.jpg';
-import image5 from '../app/public/vestimenta/5.jpg';
-import image6 from '../app/public/vestimenta/6.jpg';
-import image7 from '../app/public/vestimenta/7.jpg';
-import image8 from '../app/public/vestimenta/8.jpg';
-import image9 from '../app/public/vestimenta/9.jpg';
+import image1 from '../../app/public/vestimenta/1.jpg';
+import image2 from '../../app/public/vestimenta/2.jpg';
+import image3 from '../../app/public/vestimenta/3.jpg';
+import image4 from '../../app/public/vestimenta/4.jpg';
+import image5 from '../../app/public/vestimenta/5.jpg';
+import image6 from '../../app/public/vestimenta/6.jpg';
+import image7 from '../../app/public/vestimenta/7.jpg';
+import image8 from '../../app/public/vestimenta/8.jpg';
+import image9 from '../../app/public/vestimenta/9.jpg';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
