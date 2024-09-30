@@ -1,4 +1,4 @@
-import Outfits from "@/components/Outfits";
+import Outfits from "@/components/Party/Outfits.jsx";
 import { layourMetadata } from "../layout.js";
 
 export const metadata = {

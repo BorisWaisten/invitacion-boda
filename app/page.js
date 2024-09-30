@@ -1,12 +1,12 @@
 import Header from '@/components/Header';
 import Gallery from '@/components/Gallery';
-import Invitation from '@/components/Invitation';
+import Invitation from '@/components/Invitation/Invitation';
 import Footer from '@/components/Footer';
 import '../components/components.css';
 import Party from '@/components/Party';
 import Date from '@/components/Date';
-import Regalos from '@/components/Gifts';
-import ConfirmarAsistencia from '@/components/ConfirmAsistency';
+import Regalos from '@/components/Gifts/Gifts';
+import ConfirmarAsistencia from '@/components/Asistency/ConfirmAsistency';
 import { layourMetadata } from './layout';
 import MusicPlayer from '@/components/MusicPlayer'; // Importa el nuevo componente
 
