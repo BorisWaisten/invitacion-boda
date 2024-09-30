@@ -72,8 +72,8 @@ const Asistency = () => {
   };
 
   return (
-    <section id="asistency" className="bg-terciary min-h-screen flex items-center justify-center">
-      <div className={`container bg-white rounded-xl shadow-2xl p-8 m-10 mx-4 w-full sm:w-auto`}>
+    <section id="asistency" className="bg-secondary min-h-screen flex items-center justify-center">
+      <div className={`container bg-terciary rounded-xl shadow-2xl p-8 m-10 mx-4 w-full sm:w-auto`}>
         <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center`}>Confirmar Asistencia</h2>
         <form onSubmit={handleSubmit} className={`grid grid-cols-1 gap-4`}>
           <div className="mb-4">
@@ -207,16 +207,16 @@ const Asistency = () => {
               rows="4"
             />
           </div>
-          <div className='grid grid-cols-2 gap-4 text-white flex justify-center'>
+          <div className='grid grid-cols-2 gap-4 flex justify-center'>
             <button
               type="submit"
-              className={`p-2 font-sans bg-primary hover:bg-secondary hover:text-secondary font-bold rounded-lg transform duration-300 ease-in-out`}
+              className={`p-2 font-sans  font-bold rounded-lg shadow-md`}
             >
               Confirmar
             </button>
             <button
               type="button"
-              className="font-bold font-sans bg-primary hover:bg-secondary hover:text-secondary rounded-lg shadow-md hover:bg-blue-600 transition-colors"
+              className="font-bold font-sans  rounded-lg shadow-md "
               onClick={() => router.push('/#asistency')}
             >
               Volver
