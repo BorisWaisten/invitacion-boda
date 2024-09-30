@@ -9,6 +9,7 @@ import Regalos from '@/components/Gifts';
 import ConfirmarAsistencia from '@/components/ConfirmAsistency';
 import { layourMetadata } from './layout';
 import MusicPlayer from '@/components/MusicPlayer'; // Importa el nuevo componente
+import MusicPlayer2 from '@/components/MusicPlay2';
 
 export const metadata = {
   ...layourMetadata,
@@ -49,7 +50,7 @@ const Home = () => {
         </section>
       </main>
       <Footer />
-      <MusicPlayer />
+      <MusicPlayer2 />
     </div>
   );
 };
