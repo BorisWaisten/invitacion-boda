@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import './components.css';
+import '../components.css';
 import { useRouter } from 'next/navigation';
 // import Button from '../ui/buttons'; // Importa el nuevo componente de botón
 

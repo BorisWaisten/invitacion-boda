@@ -1,10 +1,10 @@
 import Header from '@/components/Header';
-import Gallery from '@/components/Gallery';
+import Gallery from '@/components/Gallery/Gallery';
 import Invitation from '@/components/Invitation/Invitation';
 import Footer from '@/components/Footer';
 import '../components/components.css';
-import Party from '@/components/Party';
-import Date from '@/components/Date';
+import Party from '../components/Party/Party';
+import Date from '@/components/Date/Date';
 import Regalos from '@/components/Gifts/Gifts';
 import ConfirmarAsistencia from '@/components/Asistency/ConfirmAsistency';
 import { layourMetadata } from './layout';

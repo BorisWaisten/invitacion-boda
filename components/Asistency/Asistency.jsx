@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import './components.css';
+import '../components.css';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
@@ -207,7 +207,7 @@ const Asistency = () => {
               rows="4"
             />
           </div>
-          <div className='grid grid-cols-2 gap-4 flex justify-center'>
+          <div className='grid grid-cols-2 gap-4 text-white flex justify-center'>
             <button
               type="submit"
               className={`p-2 font-sans bg-primary hover:bg-secondary hover:text-secondary font-bold rounded-lg transform duration-300 ease-in-out`}

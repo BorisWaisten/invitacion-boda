@@ -3,7 +3,7 @@
 import React from 'react';
 import { dancingScript, playfairDisplay } from '../public/fonts'; // Ajusta la ruta según tu estructura de proyecto
 import { useRouter } from 'next/navigation';
-import './components.css';
+import '../components.css';
 
 export default function SongCompontPage (){
   const router = useRouter();

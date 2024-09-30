@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import './components.css';
+import '../components.css';
 
 const Invitation = () => {
   const informacion = [

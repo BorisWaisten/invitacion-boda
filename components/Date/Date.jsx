@@ -1,7 +1,7 @@
 'use client';
 import Countdown from "./Countdown";
 import ScheduleEvent from "./ScheduleEvent";
-import './components.css';
+import '../components.css';
 
 export default function Date() {
     return (
