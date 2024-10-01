@@ -1,4 +1,3 @@
-'use client'
 import React from 'react';
 import './components.css';
 import Image from 'next/image';
@@ -7,7 +6,7 @@ import { cinzelDecorative } from '@/public/fonts';
 const Header = () => {
   return (
     <header className="relative">
-      <div className="relative w-full min-h-screen"> {/* Cambié la altura a min-h-screen */}
+      <div className="relative w-full h-[100vw] md:h-[80vw] lg:h-[70vw]">
         <Image
           src="/fondo.jpg"
           alt="header"
@@ -16,16 +15,16 @@ const Header = () => {
           objectPosition="center"
           quality={100}
           priority={true}
-          className="fixed top-0 left-0 w-full h-full" 
+          className="w-full h-full"
         />
         {/* Capa de superposición con gradiente oscuro */}
         <div className="absolute "></div>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-          <p className="flex items-center text-lg md:text-2xl lg:text-3xl font-bold mb-4">
-            <span className="flex-grow h-px w-[15vw] md:w-[15vw] lg:w-[15vw] bg-white mr-10 md:mr-20 lg:mr-20"></span>
-            22.03.2025
-            <span className="flex-grow h-px w-[15vw] md:w-[15vw] lg:w-[15vw] bg-white ml-10 md:ml-20 lg:ml-20"></span>
-          </p>
+        <p className="flex items-center text-lg md:text-2xl lg:text-3xl font-bold mb-4">
+          <span className="flex-grow h-px w-[15vw] md:w-[15vw] lg:w-[15vw]   bg-white mr-10 md:mr-20 lg:mr-20"></span> {/* Línea antes del texto */}
+          22.03.2025
+          <span className="flex-grow h-px w-[15vw] md:w-[15vw] lg:w-[15vw]  bg-white ml-10 md:ml-20 lg:ml-20"></span> {/* Línea después del texto */}
+        </p>
           <div className="flex flex-col items-center w-full">
             <h1 className={`titleHeader text-center ${cinzelDecorative.className}`}>
               Martu & Gino
