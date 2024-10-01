@@ -6,8 +6,8 @@ import '../components.css';
 export default function Date() {
     return (
         <div className="relative flex flex-col text-center justify-center items-center space-y-4">
-            <div className="pt-14 w-[70vw] md:w-[60%] lg:w-full font-bold text-sm  md:text-2xl lg:text-3xl">
-                <h2 className=" lg:w-[60%] mx-auto">¡QUEREMOS QUE ESTÉS PRESENTE EN ESTE DÍA TAN IMPORTANTE!</h2>
+            <div className="pt-14 w-[70vw] md:w-[60%] lg:w-full font-bold text-sm  md:text-2xl lg:text-2xl">
+                <h2>¡QUEREMOS QUE ESTÉS PRESENTE EN ESTE DÍA TAN IMPORTANTE!</h2>
             </div>
 
             <img
