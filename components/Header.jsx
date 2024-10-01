@@ -6,7 +6,7 @@ import { cinzelDecorative } from '@/public/fonts';
 const Header = () => {
   return (
     <header className="relative">
-      <div className="relative w-full h-[80vh] md:h-[100vh] lg:h-[150vh]">
+      <div className="relative w-full h-[100vw] md:h-[80vw] lg:h-[70vw]">
         <Image
           src="/fondo.jpg"
           alt="header"
