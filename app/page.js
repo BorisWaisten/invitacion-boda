@@ -17,7 +17,7 @@ export const metadata = {
       {
         url: '/imagenPortada.jpg', // La ruta de la imagen en tu carpeta public
         width: 1200,
-        height: 800,
+        height: 1200,
         alt: 'Imagen representativa de la boda de M&G',
       },
     ],
