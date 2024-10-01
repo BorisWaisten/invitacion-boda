@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import '../components.css';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
-import { set } from 'date-fns';
 
 const Asistency = () => {
   const [formData, setFormData] = useState({
@@ -30,8 +29,12 @@ const Asistency = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Combina los valores de los checkboxes en un solo string
+  
+    // Normaliza los nombres y apellidos a minúsculas
+    const nombreNormalizado = formData.nombre.toLowerCase();
+    const apellidoNormalizado = formData.apellido.toLowerCase();
+
+
     const condiciones = [
       formData.celiaco && 'Celiaco',
       formData.diabetes && 'Diabetes',
@@ -40,27 +43,28 @@ const Asistency = () => {
       formData.vegano && 'Vegano',
       formData.vegetariano && 'Vegetariano',
     ].filter(Boolean).join(', ');
-
+  
     const dataToSend = {
       ...formData,
-      condiciones, // Agrega el string de condiciones al objeto
+      nombre: nombreNormalizado,
+      apellido: apellidoNormalizado,
+      condiciones, 
     };
-
+  
     try {
-
-      const nameExists = await axios.get(`https://sheet.best/api/sheets/ff06f600-9163-4e3c-b414-87a2a72a7ef5/nombre/${formData.nombre}`);
-      const lastNameExists = await axios.get(`https://sheet.best/api/sheets/ff06f600-9163-4e3c-b414-87a2a72a7ef5/apellido/${formData.apellido}`);
+      const nameExists = await axios.get(`https://sheet.best/api/sheets/ff06f600-9163-4e3c-b414-87a2a72a7ef5/nombre/${nombreNormalizado}`);
+      const lastNameExists = await axios.get(`https://sheet.best/api/sheets/ff06f600-9163-4e3c-b414-87a2a72a7ef5/apellido/${apellidoNormalizado}`);
           
       if (nameExists.data.length > 0 && lastNameExists.data.length > 0) {
         setMessage({
           contenido: 'Ya se encuentra registrado',
           fallido: true,
-        })
+        });
         setTimeout(() => {
           setMessage({
             contenido: '',
             fallido: false,
-          })
+          });
           setFormData({
             nombre: '',
             apellido: '',
@@ -73,40 +77,41 @@ const Asistency = () => {
             vegano: false,
             vegetariano: false,
             otras: '',
-          })
+          });
         }, 3000);
         return;
       }
-
+  
       await axios.post('https://sheet.best/api/sheets/ff06f600-9163-4e3c-b414-87a2a72a7ef5', dataToSend);
       setMessage({
         contenido: 'Información enviada correctamente',
-        fallido: false,});
+        fallido: false,
+      });
       setFormData({
         nombre: '',
         apellido: '',
         parejaNombre: '',
         parejaApellido: '',
-        condiciones: '', // Reinicia el campo de condiciones
+        condiciones: '', 
         otraInfo: '',
       });
       setTimeout(() => {
         setMessage({
           contenido: '',
-        });  // Limpia el mensaje después de un tiempo
+        });
         router.push('/#asistency');
-      }, 3000);
+      }, 2000);
     } catch (error) {
       console.log(error);
       setMessage({
         contenido: 'Error al enviar la información',
         fallido: true,
-      })
+      });
       setTimeout(() => {
         setMessage({
           contenido: '',
           fallido: false,
-        })
+        });
         setFormData({
           nombre: '',
           apellido: '',
@@ -119,10 +124,11 @@ const Asistency = () => {
           vegano: false,
           vegetariano: false,
           otras: '',
-        })
+        });
       }, 3000);
     }
   };
+  
 
   return (
     <section id="asistency" className="bg-secondary min-h-screen flex items-center justify-center">
