@@ -15,7 +15,7 @@ export const metadata = {
   openGraph: {
     images: [
       {
-        url: '/imagenPortada.png', // La ruta de la imagen en tu carpeta public
+        url: '/imagenPortada.jpg', // La ruta de la imagen en tu carpeta public
         width: 1200,
         height: 1200,
         alt: 'Imagen representativa de la boda de M&G',
