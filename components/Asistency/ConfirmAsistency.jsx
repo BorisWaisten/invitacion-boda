@@ -12,8 +12,11 @@ export default function ConfirmarAsistencia() {
         <h2 className= {` text-secondary  text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 `}>
           CONFIRMACIÓN DE ASISTENCIA
         </h2>
-        <p className=" text-xs sm:text-sm md:text-base lg:text-lg mb-6 italic font-semibold">
+        <p className=" text-xs sm:text-sm md:text-base lg:text-lg mb-1 italic font-semibold">
           Esperamos contar con tu presencia, no olvides confirmar.
+        </p>
+        <p className=" text-xs sm:text-sm md:text-base lg:text-lg mb-6  font-semibold">
+          Fecha limite 22/02/2025.
         </p>
         <div className="flex justify-center ">
           <button 
