@@ -8,6 +8,13 @@ export const layourMetadata = {
     icon:'/logo.ico',
   },
   metadataBase: new URL('https://martuygino.vercel.app'), // Agrega esta línea
+  images: [{
+    url: '/imagenPortada.jpg',
+    width: 1200,
+    height: 630,
+    alt: 'Imagen representativa de la boda de M&G',
+    type: 'image/jpeg',
+  }],
   openGraph: {
     title: 'M&G - Nuestra Boda',
     description: '¡Nos casamos! Ven y celebra con nosotros este día tan especial.',
