@@ -15,9 +15,9 @@ export const metadata = {
   openGraph: {
     images: [
       {
-        url: '/imagenPortada.jpg', // La ruta de la imagen en tu carpeta public
+        url: 'https://martuygino.vercel.app/imagenPortada.jpg', 
         width: 1200,
-        height: 1200,
+        height: 630,
         alt: 'Imagen representativa de la boda de M&G',
       },
     ],
