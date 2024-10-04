@@ -16,7 +16,7 @@ export default function ConfirmarAsistencia() {
           Esperamos contar con tu presencia, no olvides confirmar.
         </p>
         <p className=" text-xs sm:text-sm md:text-base lg:text-lg mb-6  font-semibold">
-          Fecha límite 22/02/2025.
+          Fecha límite 22/02/2025
         </p>
         <div className="flex justify-center ">
           <button 
