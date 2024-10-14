@@ -19,7 +19,7 @@ export const layourMetadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="es" translate="no">
       <body className= {`text-primary ${montserrat.className}`} >{children}</body>
     </html>
   );
