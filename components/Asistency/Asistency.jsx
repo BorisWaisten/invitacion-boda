@@ -13,7 +13,6 @@ const Asistency = () => {
   return (
     <section id="asistency" className="bg-secondary min-h-screen flex items-center justify-center">
       <div className="container bg-terciary rounded-xl shadow-2xl p-8 m-10 mx-4 w-full sm:w-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Confirmar Asistencia</h2>
         <div className='grid grid-cols-2 gap-4 flex justify-center'>
           <button
             type="button"
